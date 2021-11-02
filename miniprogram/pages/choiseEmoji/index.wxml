@@ -1,0 +1,24 @@
+<!--pages/choiseEmoji/index.wxml-->
+<view class="container_index">
+  <view class="padding-sm text-center">
+    <view class="cu-avatar xl round margin-left bg-white">{{iconList[emojiNum-1].emoji}}</view>
+  </view>
+  
+  <view class='margin bg-white padding radius shadow-lg' style="max-height: 1000rpx;">
+    <scroll-view class="pro_list" scroll-y style="height: 860rpx;">
+      <view class="cu-list grid col-5 no-border">
+        <view class="cu-item text-xxxl " wx:for="{{iconList}}" wx:key="value" bindtap="emojiChange"
+          data-value="{{item.num}}">
+          <view>{{item.emoji}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+
+  <view class="button_type bg-orange" bindtap="jumpPage" data-page="addEvent"
+    data-emoji="{{iconList[emojiNum-1].emoji}}" hover-class="item-hover" hover-stay-time="100">
+    <text class="margin-tb-sm text-xxl">确认选择{{iconList[emojiNum-1].emoji}}</text>
+  </view>
+
+</view>

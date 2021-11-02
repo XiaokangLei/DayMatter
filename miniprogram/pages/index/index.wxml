@@ -1,0 +1,169 @@
+<!--pages/indexTest/index.wxml-->
+<view class="container_index">
+  <view wx:if="{{event_length}}">
+    <view class="padding-sm flex">
+      <view class="flex-sub padding-sm margin-xs radius text-xsl" style="padding-top: -40rpx;padding-left: 60rpx;">🎃
+      </view>
+      <view class="flex-sub padding-sm margin-xs radius text-xsl text-right" style="padding-top: 100rpx;">💦</view>
+    </view>
+
+    <view class="padding-sm">
+      <view class="flex p-xs margin-bottom-sm mb-sm">
+        <view class="flex-sub  padding-sm margin-xs radius text-xxl">💕</view>
+        <view class="flex-twice  padding-sm margin-xs radius">
+          <view class="padding-sm text-sl text-center">DayMatter</view>
+          <view class="padding-sm text-xl text-center">记录重要的那天</view>
+        </view>
+        <view class="flex-sub  padding-sm margin-xs radius text-xxxl" style="padding-top: 120rpx;">💕</view>
+      </view>
+    </view>
+
+    <view class="padding-sm flex">
+      <view class="flex-sub padding-sm margin-xs radius text-xsl text-right" style="padding-top: 100rpx;">✨</view>
+      <view class="flex-sub padding-sm margin-xs radius text-xsl" style="padding-top: -40rpx;padding-left: 60rpx;">🪐
+      </view>
+    </view>
+    <view class="padding-sm flex">
+      <view class="flex-sub padding-sm margin-xs radius text-xsl" style="padding-top: 140rpx;">🍂</view>
+      <view class="flex-sub padding-sm margin-xs radius text-xsl text-right">☕</view>
+    </view>
+    <view class="padding-sm flex">
+      <view class="flex-sub padding-sm margin-xs radius text-xsl"></view>
+      <view class="flex-twice padding-sm margin-xs radius text-xsl">🥮</view>
+      <view class="flex-treble padding-sm margin-xs radius text-xsl"></view>
+    </view>
+
+    <view class="button_type bg-orange" bindtap="jumpPage" data-page="addEvent" hover-class="item-hover"
+      hover-stay-time="100">
+      <text class="margin-tb-sm text-xxl">添加倒数日 💡</text>
+    </view>
+
+  </view>
+  <!-- 直接显示事件 -->
+  <view wx:else>
+
+    <!-- <view class="grid col-1 padding-sm" style="margin-bottom: 15%;">
+      <view class="padding-sm" wx:for="{{eventList}}" wx:key="item">
+        <view class="bg-{{item.bg_color}} padding-sm radius text-center light">
+          <view class="flex padding-sm justify-between">
+            <view class="padding-xs radius text-xsl">{{item.emoji}}
+            </view>
+            <view>
+              <view class="padding-xs radius text-right " style="margin-top: -20rpx;">
+                <text>{{item.date}}{{item.weather}}</text>
+              </view>
+              <view class="padding-xs radius text-xxl text-right text-cut">
+                <text class="text-cut">{{item.title}}</text>
+              </view>
+              <view class="padding-xs radius text-right text-cut" style="margin-bottom: -20rpx;">
+                <text wx:if="{{m2.format(item.date)[0]}}" class="text-xl">还有</text>
+                <text wx:else class="text-bold text-xl">已经</text>
+                <text class="text-ssl"> {{m2.format(item.date)[1]}} </text>
+                <text class="text-xl">天</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+    <view class='radius shadow-lg' style="max-height: 1450rpx;">
+      <scroll-view class="pro_list" scroll-y style="height: 1400rpx;">
+        <view class="grid col-1 padding-sm" style="margin-bottom: 140rpx;">
+          <view class="padding-sm" wx:for="{{eventList}}" wx:key="item" >
+            <view class="bg-{{item.bg_color}} padding-sm radius text-center light" bindtap="jumpPageDetail" data-page="detailEvent" hover-class="item-hover" hover-stay-time="100">
+              <view class="flex padding-sm justify-between">
+                <view class="padding-xs radius text-xsl">{{item.emoji}}
+                </view>
+                <view>
+                  <view class="padding-xs radius text-right " style="margin-top: -20rpx;">
+                    <text>{{item.date}}{{item.weather}}</text>
+                  </view>
+                  <view class="padding-xs radius text-xxl text-right text-cut">
+                    <text class="text-cut">{{item.title}}</text>
+                  </view>
+                  <view class="padding-xs radius text-right text-cut" style="margin-bottom: -20rpx;">
+                    <text wx:if="{{m2.format(item.date)[0]}}" class="text-xl">还有</text>
+                    <text wx:else class="text-bold text-xl">已经</text>
+                    <text class="text-ssl"> {{m2.format(item.date)[1]}} </text>
+                    <text class="text-xl">天</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view bindtap="jumpPage" data-page="addEvent" hover-class="item-hover" hover-stay-time="100">
+      <button class="cu-btn round bg-gray light shadow text-xl "
+        style="position: fixed;bottom: 70rpx; width: 20%; margin-left: 60%;">新增</button>
+    </view>
+    <view>
+      <button class="cu-btn round shadow bg-gray light text-xl"
+        style="position: fixed;bottom: 70rpx; width: 20%; margin-left: 15%;">关于</button>
+    </view>
+
+  </view>
+
+
+
+</view>
+
+
+<wxs module="m1">
+  function format(ts) {
+    var d = getDate(ts)
+    var myDate = getDate();
+    return [d.getFullYear(), d.getMonth() + 1, d.getDate()].map(formatNumber).join('-')
+  }
+  function formatNumber(n) {
+    n = n.toString()
+    return n[1] ? n : '0' + n
+  }
+  module.exports.format = format
+</wxs>
+
+<wxs module="m2">
+  function format(ts) {
+    var d = getDate(ts)
+    var myDate = getDate();
+    var theTime = d - myDate
+    var minute = 0; // 分
+    var hour = 0;//小时
+    var day = 0
+    if (theTime > 60) {
+      minute = parseInt(theTime / 60 / 1000);
+      theTime = parseInt(theTime % 60);
+      if (minute > 60) {
+        hour = parseInt(minute / 60);
+      }
+      if (hour > 24) {
+        day = parseInt(hour / 24 + 1);
+      }
+      else if (hour > 0) {
+        day = 1
+      }
+      console.log(day)
+      return [1, day]
+    }
+    else {
+      theTime = myDate - d
+      minute = parseInt(theTime / 60 / 1000);
+      theTime = parseInt(theTime % 60);
+      if (minute > 60) {
+        hour = parseInt(minute / 60);
+      }
+      if (hour > 24) {
+        day = parseInt(hour / 24 + 1);
+      }
+      else if (hour > 0) {
+        day = 0
+      }
+      console.log(day)
+      return [0, day]
+    }
+  }
+  module.exports.format = format
+</wxs>

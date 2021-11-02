@@ -1,0 +1,92 @@
+<!--pages/detailEvent/index.wxml-->
+<view class="container_index">
+  <view class="grid col-1 padding" style="margin-bottom: 160rpx; height: 1500rpx; margin-top: 20rpx;">
+    <view class="padding">
+      <view class="bg-red padding-sm radius text-center light" style="height: 1120rpx; ">
+        <view class="padding-sm justify-between">
+          <view class="padding-xs radius text-xsl">🏀
+          </view>
+          <view>
+            <view class="padding-xs radius text-center">
+              <text>2021-11-01{{item.weather}}</text>
+            </view>
+            <view class="padding-xs radius text-xxl text-cut" style="margin-top: 80rpx;">
+              <text class="text-cut">测试测试测试</text>
+            </view>
+            <view class="padding-xs radius text-cut" style="margin-top: 120rpx;">
+              <text wx:if="{{m2.format('2021-11-05')[0]}}" class="text-xl">还有</text>
+              <text wx:else class="text-bold text-xl">已经</text>
+              <text class="text-xxsl text-blod"> {{m2.format('2021-11-05')[1]}} </text>
+              <text class="text-xl">天</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view bindtap="jumpPage" data-page="addEvent" hover-class="item-hover" hover-stay-time="100">
+      <button class="cu-btn round bg-gray light shadow text-xl "
+        style="position: fixed;bottom: 10%; width: 20%; margin-left: 50%;">删除</button>
+    </view>
+    <view>
+      <button class="cu-btn round shadow bg-gray light text-xl"
+        style="position: fixed;bottom: 10%; width: 20%; margin-left: 15%;">修改</button>
+    </view>
+    </view>
+  </view>
+</view>
+
+
+<wxs module="m1">
+  function format(ts) {
+    var d = getDate(ts)
+    var myDate = getDate();
+    return [d.getFullYear(), d.getMonth() + 1, d.getDate()].map(formatNumber).join('-')
+  }
+  function formatNumber(n) {
+    n = n.toString()
+    return n[1] ? n : '0' + n
+  }
+  module.exports.format = format
+</wxs>
+
+<wxs module="m2">
+  function format(ts) {
+    var d = getDate(ts)
+    var myDate = getDate();
+    var theTime = d - myDate
+    var minute = 0; // 分
+    var hour = 0;//小时
+    var day = 0
+    if (theTime > 60) {
+      minute = parseInt(theTime / 60 / 1000);
+      theTime = parseInt(theTime % 60);
+      if (minute > 60) {
+        hour = parseInt(minute / 60);
+      }
+      if (hour > 24) {
+        day = parseInt(hour / 24 + 1);
+      }
+      else if (hour > 0) {
+        day = 1
+      }
+      console.log(day)
+      return [1, day]
+    }
+    else {
+      theTime = myDate - d
+      minute = parseInt(theTime / 60 / 1000);
+      theTime = parseInt(theTime % 60);
+      if (minute > 60) {
+        hour = parseInt(minute / 60);
+      }
+      if (hour > 24) {
+        day = parseInt(hour / 24 + 1);
+      }
+      else if (hour > 0) {
+        day = 0
+      }
+      console.log(day)
+      return [0, day]
+    }
+  }
+  module.exports.format = format
+</wxs>
