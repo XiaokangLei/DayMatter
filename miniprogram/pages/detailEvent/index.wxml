@@ -46,7 +46,7 @@
       </view>
 
 
-      <view bindtap="jumpPage" data-page="addEvent" hover-class="item-hover" hover-stay-time="100">
+      <view bindtap="modifyPage" data-page="modifyEvent" hover-class="item-hover" hover-stay-time="100">
         <button class="cu-btn round shadow bg-gray light text-xl"
           style="position: fixed;bottom: 10%; width: 20%; margin-left: 15%;">修改</button>
       </view>

@@ -1,4 +1,4 @@
-<!--pages/addEvent/index.wxml-->
+<!--pages/modifyEvent/index.wxml-->
 <view class="container_index">
 
   <!-- 预览样式 -->
@@ -44,7 +44,7 @@
     <view class="flex p-xs margin-bottom-sm mb-sm text-xl">
       <view class="flex-sub bg-grey light padding-sm margin-xs radius ">📄 <text style="color:grey;">标题</text></view>
       <view class="flex-treble bg-grey light padding-sm margin-xs radius"><input class="text-grey"
-          placeholder-style="color:grey;" bindinput="bindKeyInput" maxlength="8" placeholder="请输入标题"></input></view>
+          placeholder-style="color:grey;" bindinput="bindKeyInput" maxlength="12" placeholder="不超过12字"></input></view>
     </view>
 
     <!-- 选择日期 -->
@@ -65,9 +65,9 @@
   </view>
 
 
-  <view class="button_type bg-orange" bindtap="jumpPageIndex" data-page="index" data-openId="{{openId}}" hover-class="item-hover"
-    hover-stay-time="100">
-    <text class="margin-tb-sm text-xxl">添加倒数日 💡</text>
+  <view class="button_type bg-orange" bindtap="jumpPageIndex" data-page="index" data-openId="{{openId}}"
+    hover-class="item-hover" hover-stay-time="100">
+    <text class="margin-tb-sm text-xxl">确认修改 💡</text>
   </view>
 
 

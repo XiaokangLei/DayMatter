@@ -1,4 +1,4 @@
-// pages/addEvent/index.js
+// pages/modifyEvent/index.js
 const app = getApp();
 const {
   envList
@@ -6,8 +6,6 @@ const {
 const db = wx.cloud.database({
   env: envList[1].envId
 })
-import api from '../../utils/api.js'
-
 Page({
 
   /**
@@ -16,8 +14,8 @@ Page({
   data: {
     openId: "",
     bg_color: 'red',
-    title: '没有标题呀',
-    date: '',
+    title: '2021年圣诞节',
+    date: '2021-12-25',
     emoji: app.globalData.emoji,
     type: 1,
     weather: '',
@@ -61,31 +59,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var date = new Date();
-    // console.log('当前年月日:',date.toLocaleDateString());
-    // console.log('今天周几:', api.getWeekByDate(new Date()))
-    this.setData({
-      date: date.toLocaleDateString().replace(new RegExp("/","gm"),"-")
-    })
-    try {
-      wx.setStorageSync('bg_color', this.data.bg_color)
-      wx.setStorageSync('title', this.data.title)
-      wx.setStorageSync('date', this.data.date)
-      wx.setStorageSync('emoji', this.data.emoji)
-      wx.setStorageSync('type', this.data.type)
-      wx.setStorageSync('weather', this.data.weather)
-    } catch (e) {
+    // try {
+    //   wx.setStorageSync('bg_color', this.data.bg_color)
+    //   wx.setStorageSync('title', this.data.title)
+    //   wx.setStorageSync('date', this.data.date)
+    //   wx.setStorageSync('emoji', this.data.emoji)
+    //   wx.setStorageSync('type', this.data.type)
+    //   wx.setStorageSync('weather', this.data.weather)
+    // } catch (e) {
 
-    }
-    if (options.emoji) {
-      this.setData({
-        emoji: options.emoji
-      })
-    }
-    this.setData({
-      openId: options.openId
-    })
-    console.log(this.data.openId)
+    // }
+    // if (options.emoji) {
+    //   this.setData({
+    //     emoji: options.emoji
+    //   })
+    // }
+    // this.setData({
+    //   openId: options.openId
+    // })
+    // console.log(this.data.openId)
   },
 
   /**
@@ -99,6 +91,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // try {
+    //   wx.setStorageSync('isFrash', false)
+    //   var value = wx.getStorageSync('emoji')
+    //   if (value) {
+    //     // Do something with return value
+    //     this.setData({
+    //       emoji: value
+    //     })
+    //   }
+    // } catch (e) {
+    //   // Do something when catch error
+    // }
     try {
       wx.setStorageSync('isFrash', false)
       this.setData({
@@ -179,6 +183,7 @@ Page({
     })
   },
   jumpPageChoise(e) {
+    console.log(e.currentTarget.dataset.page)
     try {
       wx.setStorageSync('emoji', this.data.emoji)
       wx.setStorageSync('date', this.data.date)
@@ -188,8 +193,6 @@ Page({
     } catch (e) {
 
     }
-    console.log(e.currentTarget.dataset.page)
-
     wx.navigateTo({
       url: `/pages/${e.currentTarget.dataset.page}/index?openId=${app.globalData.openid}`,
     })
@@ -199,7 +202,7 @@ Page({
     console.log(e.currentTarget.dataset.page)
 
     console.log("9090900909009")
-    this.add_data()
+    // this.add_data()
     try {
       wx.setStorageSync('emoji', this.data.emoji)
       wx.setStorageSync('date', this.data.date)
@@ -209,6 +212,19 @@ Page({
     } catch (e) {
 
     }
+    db.collection('daymatter').doc(wx.getStorageSync('_id')).update({
+      // data 传入需要局部更新的数据
+      data: {
+        // 表示将 done 字段置为 true
+        emoji: this.data.emoji,
+        date:this.data.date,
+        title:this.data.title,
+        bg_color:this.data.bg_color
+      },
+      success: function(res) {
+        console.log(res.data)
+      }
+    })
 
     wx.navigateBack()
 

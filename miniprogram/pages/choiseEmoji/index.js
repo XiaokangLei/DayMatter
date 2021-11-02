@@ -9,395 +9,131 @@ Page({
   data: {
     emojiNum: 1,
     iconList: [{
-        icon: 'cardboardfill',
-        color: 'red',
-        badge: 120,
-        name: 'VR',
-        num: 1,
-        emoji: '🏄‍♀️'
+        emoji: '😀'
       }, {
-        icon: 'recordfill',
-        color: 'orange',
-        badge: 1,
-        name: '录像',
-        num: 2,
-        emoji: '🚴‍♀️'
+        emoji: '😄'
       }, {
-        icon: 'picfill',
-        color: 'yellow',
-        badge: 0,
-        name: '图像',
-        num: 3,
-        emoji: '🚵'
+        emoji: '😆'
       }, {
-        icon: 'noticefill',
-        color: 'olive',
-        badge: 22,
-        name: '通知',
-        num: 4,
-        emoji: '🏈'
+        emoji: '🤣'
       }, {
-        icon: 'upstagefill',
-        color: 'cyan',
-        badge: 0,
-        name: '排行榜',
-        num: 5,
-        emoji: '🏀'
+        emoji: '🙃'
       }, {
-        icon: 'clothesfill',
-        color: 'blue',
-        badge: 0,
-        name: '皮肤',
-        num: 6,
-        emoji: '🏓'
-      }, {
-        icon: 'discoverfill',
-        color: 'purple',
-        badge: 0,
-        name: '发现',
-        num: 7,
         emoji: '🥰'
       }, {
-        icon: 'questionfill',
-        color: 'mauve',
-        badge: 0,
-        name: '帮助',
-        num: 8,
-        emoji: '😘'
-      }, {
-        icon: 'commandfill',
-        color: 'purple',
-        badge: 0,
-        name: '问答',
-        num: 9,
         emoji: '😍'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        num: 10,
-        emoji: '🏄‍♀️'
+        emoji: '🤩'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        num: 11,
-        emoji: '🏄‍♀️'
-      }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        num: 12,
-        emoji: '🏄‍♀️'
-      },
-      {
-        icon: 'cardboardfill',
-        color: 'red',
-        badge: 120,
-        name: 'VR',
-        num: 13,
-        emoji: '🏄‍♀️'
-      }, {
-        icon: 'recordfill',
-        color: 'orange',
-        badge: 1,
-        name: '录像',
-        num: 14,
-        emoji: '🚴‍♀️'
-      }, {
-        icon: 'picfill',
-        color: 'yellow',
-        badge: 0,
-        name: '图像',
-        num: 15,
-        emoji: '🚵'
-      }, {
-        icon: 'noticefill',
-        color: 'olive',
-        badge: 22,
-        name: '通知',
-        num: 16,
-        emoji: '🏈'
-      }, {
-        icon: 'upstagefill',
-        color: 'cyan',
-        badge: 0,
-        name: '排行榜',
-        num: 17,
-        emoji: '🏀'
-      }, {
-        icon: 'clothesfill',
-        color: 'blue',
-        badge: 0,
-        name: '皮肤',
-        num: 18,
-        emoji: '🏓'
-      }, {
-        icon: 'discoverfill',
-        color: 'purple',
-        badge: 0,
-        name: '发现',
-        num: 19,
-        emoji: '🥰'
-      }, {
-        icon: 'questionfill',
-        color: 'mauve',
-        badge: 0,
-        name: '帮助',
-        num: 20,
         emoji: '😘'
       }, {
-        icon: 'commandfill',
-        color: 'purple',
-        badge: 0,
-        name: '问答',
-        emoji: '😍'
+        emoji: '😙'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
+        emoji: '😋'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
+        emoji: '😛'
+      },{
+        emoji: '😜'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
-      },
-      {
-        icon: 'cardboardfill',
-        color: 'red',
-        badge: 120,
-        name: 'VR',
-        emoji: '🏄‍♀️'
+        emoji: '😝'
       }, {
-        icon: 'recordfill',
-        color: 'orange',
-        badge: 1,
-        name: '录像',
-        emoji: '🚴‍♀️'
+        emoji: '🤫'
       }, {
-        icon: 'picfill',
-        color: 'yellow',
-        badge: 0,
-        name: '图像',
-        emoji: '🚵'
+        emoji: '😑'
       }, {
-        icon: 'noticefill',
-        color: 'olive',
-        badge: 22,
-        name: '通知',
-        emoji: '🏈'
+        emoji: '🙄'
       }, {
-        icon: 'upstagefill',
-        color: 'cyan',
-        badge: 0,
-        name: '排行榜',
-        emoji: '🏀'
+        emoji: '😔'
       }, {
-        icon: 'clothesfill',
-        color: 'blue',
-        badge: 0,
-        name: '皮肤',
-        emoji: '🏓'
+        emoji: '😪'
       }, {
-        icon: 'discoverfill',
-        color: 'purple',
-        badge: 0,
-        name: '发现',
-        emoji: '🥰'
+        emoji: '😕'
       }, {
-        icon: 'questionfill',
-        color: 'mauve',
-        badge: 0,
-        name: '帮助',
-        emoji: '😘'
+        emoji: '☹️'
       }, {
-        icon: 'commandfill',
-        color: 'purple',
-        badge: 0,
-        name: '问答',
-        emoji: '😍'
+        emoji: '😮'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
+        emoji: '😰'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
+        emoji: '😓'
+      },{
+        emoji: '😩'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
-      },
-      {
-        icon: 'cardboardfill',
-        color: 'red',
-        badge: 120,
-        name: 'VR',
-        emoji: '🏄‍♀️'
+        emoji: '😤'
       }, {
-        icon: 'recordfill',
-        color: 'orange',
-        badge: 1,
-        name: '录像',
-        emoji: '🚴‍♀️'
+        emoji: '😡'
       }, {
-        icon: 'picfill',
-        color: 'yellow',
-        badge: 0,
-        name: '图像',
-        emoji: '🚵'
+        emoji: '😈'
       }, {
-        icon: 'noticefill',
-        color: 'olive',
-        badge: 22,
-        name: '通知',
-        emoji: '🏈'
+        emoji: '💀'
       }, {
-        icon: 'upstagefill',
-        color: 'cyan',
-        badge: 0,
-        name: '排行榜',
-        emoji: '🏀'
+        emoji: '🤡'
       }, {
-        icon: 'clothesfill',
-        color: 'blue',
-        badge: 0,
-        name: '皮肤',
-        emoji: '🏓'
+        emoji: '👻'
       }, {
-        icon: 'discoverfill',
-        color: 'purple',
-        badge: 0,
-        name: '发现',
-        emoji: '🥰'
+        emoji: '👋'
       }, {
-        icon: 'questionfill',
-        color: 'mauve',
-        badge: 0,
-        name: '帮助',
-        emoji: '😘'
+        emoji: '🖐️'
       }, {
-        icon: 'commandfill',
-        color: 'purple',
-        badge: 0,
-        name: '问答',
-        emoji: '😍'
+        emoji: '👌'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
+        emoji: '👈'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
+        emoji: '👉'
+      },{
+        emoji: '🤙'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
-      },
-      {
-        icon: 'cardboardfill',
-        color: 'red',
-        badge: 120,
-        name: 'VR',
-        emoji: '🏄‍♀️'
+        emoji: '🙏'
       }, {
-        icon: 'recordfill',
-        color: 'orange',
-        badge: 1,
-        name: '录像',
-        emoji: '🚴‍♀️'
+        emoji: '🤳'
       }, {
-        icon: 'picfill',
-        color: 'yellow',
-        badge: 0,
-        name: '图像',
-        emoji: '🚵'
+        emoji: '💅'
       }, {
-        icon: 'noticefill',
-        color: 'olive',
-        badge: 22,
-        name: '通知',
-        emoji: '🏈'
+        emoji: '👃'
       }, {
-        icon: 'upstagefill',
-        color: 'cyan',
-        badge: 0,
-        name: '排行榜',
-        emoji: '🏀'
+        emoji: '👂'
       }, {
-        icon: 'clothesfill',
-        color: 'blue',
-        badge: 0,
-        name: '皮肤',
-        emoji: '🏓'
+        emoji: '👀'
       }, {
-        icon: 'discoverfill',
-        color: 'purple',
-        badge: 0,
-        name: '发现',
-        emoji: '🥰'
+        emoji: '👁️'
       }, {
-        icon: 'questionfill',
-        color: 'mauve',
-        badge: 0,
-        name: '帮助',
-        emoji: '😘'
+        emoji: '👶'
       }, {
-        icon: 'commandfill',
-        color: 'purple',
-        badge: 0,
-        name: '问答',
-        emoji: '😍'
+        emoji: '👧'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
+        emoji: '👨‍🦳'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
+        emoji: '🙍'
+      },{
+        emoji: '🙅'
       }, {
-        icon: 'brandfill',
-        color: 'mauve',
-        badge: 0,
-        name: '版权',
-        emoji: '🏄‍♀️'
+        emoji: '💁'
+      }, {
+        emoji: '🙇'
+      }, {
+        emoji: '👩‍🍳'
+      }, {
+        emoji: '🧙'
+      }, {
+        emoji: '🚶'
+      }, {
+        emoji: '🧑‍🤝‍🧑'
+      }, {
+        emoji: '👫'
+      }, {
+        emoji: '💏'
+      }, {
+        emoji: '👪'
+      }, {
+        emoji: '👨‍👩‍👧‍👦'
+      }, {
+        emoji: '🌂'
+      }, {
+        emoji: '🎃'
       }
-
     ],
     gridCol: 5,
-
-
+    emoji: '😍'
   },
 
   /**
@@ -461,16 +197,9 @@ Page({
       key: "emoji",
       data: e.currentTarget.dataset.emoji,
       success: function () {
-        wx.navigateBack();   //返回上一个页面
+        wx.navigateBack(); //返回上一个页面
       }
     })
-    // app.globalData.emoji = e.currentTarget.dataset.emoji
-    // wx.navigateBack()
-    // wx.navigateTo({
-      
-    //   url: `/pages/${e.currentTarget.dataset.page}/index?emoji=${e.currentTarget.dataset.emoji}`,
-    //   // url: `/pages/${e.currentTarget.dataset.page}/index`,
-    // })
   },
   showModal(e) {
     this.setData({
@@ -485,7 +214,7 @@ Page({
   emojiChange(e) {
     console.log(e.currentTarget.dataset.value)
     this.setData({
-      emojiNum: e.currentTarget.dataset.value
+      emoji: e.currentTarget.dataset.value
     })
   },
 })

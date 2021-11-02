@@ -4,7 +4,8 @@
     "pages/choiseEmoji/index",
     "pages/addEvent/index",
     "pages/detailEvent/index",
-    "pages/about/index"
+    "pages/about/index",
+    "pages/modifyEvent/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "@navBgColor",

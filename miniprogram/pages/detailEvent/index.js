@@ -27,19 +27,20 @@ Page({
    */
   onLoad: function (options) {
     console.log(this.data.top_height)
-    try {
-      this.setData({
-        bg_color: wx.getStorageSync('bg_color'),
-        title: wx.getStorageSync('title'),
-        date: wx.getStorageSync('date'),
-        emoji: wx.getStorageSync('emoji'),
-        type: wx.getStorageSync('type'),
-        weather: wx.getStorageSync('weather'),
-        _id: wx.getStorageSync('_id')
-      })
-    } catch (e) {
-      // Do something when catch error
-    }
+    // try {
+    //   this.setData({
+    //     bg_color: wx.getStorageSync('bg_color'),
+    //     title: wx.getStorageSync('title'),
+    //     date: wx.getStorageSync('date'),
+    //     emoji: wx.getStorageSync('emoji'),
+    //     type: wx.getStorageSync('type'),
+    //     weather: wx.getStorageSync('weather'),
+    //     _id: wx.getStorageSync('_id')
+    //   })
+    // } catch (e) {
+    //   // Do something when catch error
+    // }
+    wx.setStorageSync('isFrash', false)
   },
 
   /**
@@ -53,8 +54,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.setStorageSync('isFrash', false)
-
+   
+    try {
+      this.setData({
+        bg_color: wx.getStorageSync('bg_color'),
+        title: wx.getStorageSync('title'),
+        date: wx.getStorageSync('date'),
+        emoji: wx.getStorageSync('emoji'),
+        type: wx.getStorageSync('type'),
+        weather: wx.getStorageSync('weather'),
+        _id: wx.getStorageSync('_id')
+      })
+    } catch (e) {
+      // Do something when catch error
+    }
   },
 
   /**
@@ -110,5 +123,13 @@ Page({
       }
     })
     wx.navigateBack()
+  },
+  modifyPage(e){
+    // wx.setStorageSync('isFrash', true)
+    wx.navigateTo({
+      url: `/pages/${e.currentTarget.dataset.page}/index?type=modify`,
+      // url: `/pages/${e.currentTarget.dataset.page}/index`,
+    })
+    // wx.navigateBack()
   },
 })
