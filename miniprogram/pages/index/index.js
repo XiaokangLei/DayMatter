@@ -103,14 +103,16 @@ Page({
     openId: "",
     eventList: [],
     page: 1,
+    isFrash: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
+    wx.setStorageSync('isFrash', this.data.isFrash)
     this.setData({
-      openId: app.globalData.openid
+      openId: app.globalData.openid,
     })
     // this.checkUser()
   },
@@ -126,11 +128,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: async function () {
-    this.setData({
-      eventList: [],
-      page: 1
-    })
-    this.checkUser()
+    console.log(wx.getStorageSync('isFrash'))
+    if (wx.getStorageSync('isFrash')) {
+      this.setData({
+        eventList: [],
+        page: 1
+      })
+      this.checkUser()
+    }
+
   },
 
   /**

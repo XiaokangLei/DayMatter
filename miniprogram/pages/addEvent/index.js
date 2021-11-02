@@ -93,6 +93,7 @@ Page({
    */
   onShow: function () {
     try {
+      wx.setStorageSync('isFrash', false)
       var value = wx.getStorageSync('emoji')
       if (value) {
         // Do something with return value
@@ -186,6 +187,7 @@ Page({
       wx.setStorageSync('date', this.data.date)
       wx.setStorageSync('title', this.data.title)
       wx.setStorageSync('bg_color', this.data.bg_color)
+      wx.setStorageSync('isFrash', true)
     } catch (e) {
 
     }

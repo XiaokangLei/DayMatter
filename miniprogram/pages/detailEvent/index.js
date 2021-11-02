@@ -19,7 +19,7 @@ Page({
     emoji: '',
     type: 1,
     weather: '',
-    _id: '',
+    _id: ''
   },
 
   /**
@@ -53,6 +53,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.setStorageSync('isFrash', false)
 
   },
 
@@ -102,8 +103,9 @@ Page({
   },
 
   deleteTap(e) {
+    wx.setStorageSync('isFrash', true)
     db.collection('daymatter').doc(this.data._id).remove({
-      success: function(res) {
+      success: function (res) {
         console.log(res.data)
       }
     })
