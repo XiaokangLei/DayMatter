@@ -1,12 +1,25 @@
 // pages/detailEvent/index.js
-const app=getApp()
+const app = getApp()
+const {
+  envList
+} = require('../../envList.js')
+const db = wx.cloud.database({
+  env: envList[1].envId
+})
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    top_height:app.globalData.CustomBar
+    top_height: app.globalData.CustomBar,
+    bg_color: '',
+    title: '',
+    date: '',
+    emoji: '',
+    type: 1,
+    weather: '',
+    _id: '',
   },
 
   /**
@@ -14,7 +27,19 @@ Page({
    */
   onLoad: function (options) {
     console.log(this.data.top_height)
-
+    try {
+      this.setData({
+        bg_color: wx.getStorageSync('bg_color'),
+        title: wx.getStorageSync('title'),
+        date: wx.getStorageSync('date'),
+        emoji: wx.getStorageSync('emoji'),
+        type: wx.getStorageSync('type'),
+        weather: wx.getStorageSync('weather'),
+        _id: wx.getStorageSync('_id')
+      })
+    } catch (e) {
+      // Do something when catch error
+    }
   },
 
   /**
@@ -64,5 +89,24 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
+
+  deleteTap(e) {
+    db.collection('daymatter').doc(this.data._id).remove({
+      success: function(res) {
+        console.log(res.data)
+      }
+    })
+    wx.navigateBack()
+  },
 })

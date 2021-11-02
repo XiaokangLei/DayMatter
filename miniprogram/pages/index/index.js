@@ -109,8 +109,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    console.log("-------")
-    console.log(app.globalData)
     this.setData({
       openId: app.globalData.openid
     })
@@ -182,10 +180,6 @@ Page({
     })
   },
   jumpPageTest(e) {
-    // wx.navigateTo({
-    //   url: `/pages/${e.currentTarget.dataset.page}/index?openId=${app.globalData.openid}`,
-    //   // url: `/pages/${e.currentTarget.dataset.page}/index`,
-    // })
     url_to = '/pages/' + e.currentTarget.dataset.page + 'index?openId=' + app.globalData.openid
     console.log(url_to)
     wx.redirectTo({
@@ -193,6 +187,17 @@ Page({
     })
   },
   jumpPageDetail(e) {
+    try {
+      wx.setStorageSync('bg_color', e.currentTarget.dataset.bg_color)
+      wx.setStorageSync('title', e.currentTarget.dataset.title)
+      wx.setStorageSync('date', e.currentTarget.dataset.date)
+      wx.setStorageSync('emoji', e.currentTarget.dataset.emoji)
+      wx.setStorageSync('type', e.currentTarget.dataset.type)
+      wx.setStorageSync('weather', e.currentTarget.dataset.weather)
+      wx.setStorageSync('_id', e.currentTarget.dataset._id)
+    } catch (e) {
+
+    }
     wx.navigateTo({
       url: `/pages/${e.currentTarget.dataset.page}/index?openId=${app.globalData.openid}`,
       // url: `/pages/${e.currentTarget.dataset.page}/index`,
@@ -223,10 +228,6 @@ Page({
             eventList: that.data.eventList.concat(result.data),
             event_length: 0
           })
-          // wx.navigateTo({
-          //   url: '../listEvent/index'
-          // })
-
         }
       }
       wx.hideLoading()

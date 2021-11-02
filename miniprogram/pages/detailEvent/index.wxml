@@ -2,34 +2,54 @@
 <view class="container_index">
   <view class="grid col-1 padding" style="margin-bottom: 160rpx; height: 1500rpx; margin-top: 20rpx;">
     <view class="padding">
-      <view class="bg-red padding-sm radius text-center light" style="height: 1120rpx; ">
+      <view class="bg-{{bg_color}} padding-sm radius text-center light" style="height: 1120rpx; ">
         <view class="padding-sm justify-between">
-          <view class="padding-xs radius text-xsl">🏀
+          <view class="padding-xs radius text-xsl">{{emoji}}
           </view>
           <view>
             <view class="padding-xs radius text-center">
-              <text>2021-11-01{{item.weather}}</text>
+              <text>{{date}}{{weather}}</text>
             </view>
             <view class="padding-xs radius text-xxl text-cut" style="margin-top: 80rpx;">
-              <text class="text-cut">测试测试测试</text>
+              <text class="text-cut">{{title}}</text>
             </view>
             <view class="padding-xs radius text-cut" style="margin-top: 120rpx;">
-              <text wx:if="{{m2.format('2021-11-05')[0]}}" class="text-xl">还有</text>
+              <text wx:if="{{m2.format(date)[0]}}" class="text-xl">还有</text>
               <text wx:else class="text-bold text-xl">已经</text>
-              <text class="text-xxsl text-blod"> {{m2.format('2021-11-05')[1]}} </text>
+              <text class="text-xxsl text-blod"> {{m2.format(date)[1]}} </text>
               <text class="text-xl">天</text>
             </view>
           </view>
         </view>
       </view>
+      <view bindtap="showModal" data-target="DialogModal2" hover-class="item-hover" hover-stay-time="100">
+        <button class="cu-btn round bg-gray light shadow text-xl "
+          style="position: fixed;bottom: 10%; width: 20%; margin-left: 50%;">删除</button>
+      </view>
+
+      <view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
+        <view class="cu-dialog">
+          <view class="cu-bar bg-white justify-end">
+            <view class="content">删除倒数日</view>
+            <view class="action" bindtap="hideModal">
+              <text class="cuIcon-close text-red"></text>
+            </view>
+          </view>
+          <view class="padding-xl text-grey">
+            确定删除【{{title}}】吗？
+          </view>
+          <view class="cu-bar bg-white">
+            <view class="action margin-0 flex-sub text-green" bindtap="hideModal">取消</view>
+            <view class="action margin-0 flex-sub text-red solid-left" bindtap="deleteTap" data-page="index">确定</view>
+          </view>
+        </view>
+      </view>
+
+
       <view bindtap="jumpPage" data-page="addEvent" hover-class="item-hover" hover-stay-time="100">
-      <button class="cu-btn round bg-gray light shadow text-xl "
-        style="position: fixed;bottom: 10%; width: 20%; margin-left: 50%;">删除</button>
-    </view>
-    <view>
-      <button class="cu-btn round shadow bg-gray light text-xl"
-        style="position: fixed;bottom: 10%; width: 20%; margin-left: 15%;">修改</button>
-    </view>
+        <button class="cu-btn round shadow bg-gray light text-xl"
+          style="position: fixed;bottom: 10%; width: 20%; margin-left: 15%;">修改</button>
+      </view>
     </view>
   </view>
 </view>
