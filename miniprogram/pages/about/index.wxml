@@ -1,0 +1,21 @@
+<!--pages/about/index.wxml-->
+<view class="container_index">
+  <view class=' radius shadow-lg' style="max-height: 1200rpx;">
+    <scroll-view class="pro_list" scroll-y style="height: 1200rpx;">
+      <view class='margin-xl padding-xl radius shadow-lg'>
+        <view class='text-center margin-bottom text-lg  text-grey'>关于DayMatter</view>
+        <view class='text-content'>
+          <view>Hi！欢迎使用倒数日小程序DayMatter！</view>
+          <view class='margin-top-sm'>该项目是我个人开发的一款记录生活日常的小程序。</view>
+          <view class='margin-top-sm'>项目是开源的，不收取任何费用，如果这个项目有帮到你，或者你觉得很赞，可以在GitHub里Star支持一下！</view>
+          <view class='margin-top-sm'>
+            该项目你可以用到任何项目。作者也是花了时间和精力的，不希望你拷贝一份，做一些修改发布就变成了一个独立的项目，当然！扩展再发布是可以的，注明一下原作者٩(๑❛ᴗ❛๑)۶
+          </view>
+          <view class='margin-top-sm'>QQ：656008660</view>
+          <view class='margin-top-sm'>更多功能敬请期待！</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+</view>

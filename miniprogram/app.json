@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/choiseEmoji/index",
     "pages/addEvent/index",
-    "pages/detailEvent/index"
+    "pages/detailEvent/index",
+    "pages/about/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "@navBgColor",

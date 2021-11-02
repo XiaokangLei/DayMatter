@@ -179,11 +179,9 @@ Page({
       // url: `/pages/${e.currentTarget.dataset.page}/index`,
     })
   },
-  jumpPageTest(e) {
-    url_to = '/pages/' + e.currentTarget.dataset.page + 'index?openId=' + app.globalData.openid
-    console.log(url_to)
-    wx.redirectTo({
-      url: url_to
+  jumpAboutPage(e) {
+    wx.navigateTo({
+      url: `/pages/${e.currentTarget.dataset.page}/index?openId=${app.globalData.openid}`,
     })
   },
   jumpPageDetail(e) {

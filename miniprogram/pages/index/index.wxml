@@ -103,7 +103,7 @@
       <button class="cu-btn round bg-gray light shadow text-xl "
         style="position: fixed;bottom: 70rpx; width: 20%; margin-left: 60%;">新增</button>
     </view>
-    <view>
+    <view bindtap="jumpAboutPage" data-page="about" hover-class="item-hover" hover-stay-time="100">
       <button class="cu-btn round shadow bg-gray light text-xl"
         style="position: fixed;bottom: 70rpx; width: 20%; margin-left: 15%;">关于</button>
     </view>
