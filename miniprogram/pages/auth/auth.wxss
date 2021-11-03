@@ -1,0 +1,11 @@
+/* miniprogram/pages/auth/auth.wxss */
+
+.button-hover {
+    background-color: #d17878!important;
+}
+
+.default {
+    background-color: #f07a7a;
+    color: #ffffff;
+    margin-top: 120rpx;
+}

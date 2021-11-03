@@ -1,0 +1,84 @@
+<wxs src="../../js/thousandthPlace.wxs" module="util" />
+<view class="container_index">
+    <view class="chart">
+        <view class="query-box">
+            <view class="date-select">
+                <picker mode="date" data-key="date" end="{{lastDate}}" bindchange="changeDate">
+                    <view class="date-picker">
+                        {{searchDate?searchDate:'请选择日期'}}
+                    </view>
+                </picker>
+            </view>
+            <view class="term-select">
+                <picker mode="selector" range="{{term_Array}}" bindchange="changeSearch">
+                    <view class="term-picker">
+                        按{{term_Array[term_index]}}查询
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="query-result">
+            <view class="query-result-money">
+                <view
+                    class="money-pay-box {{typeIndex==index&&index==0?'result-pay':typeIndex==index&&index==1?'result-income':''}}"
+                    wx:for="{{payOrIncome}}" wx:key="index" data-index="{{index}}" bindtap="toggleType">
+                    <view class="money-pay-title">
+                        {{term_Array[term_index]}}{{item.text}}
+                    </view>
+                    <view class="money-pay-money ">
+                        {{util.thousandthPlace(total[item.type])}}
+                    </view>
+                </view>
+            </view>
+            <!-- 圆饼图 -->
+            <view class="query-result-chart-box">
+                <view class="empty"
+                    wx:if="{{resultData[payOrIncome[typeIndex].type].type.length==0 || !resultData[payOrIncome[typeIndex].type].type}}">
+                    暂无数据...
+                </view>
+                <view class="havedata" wx:else>
+                    <canvas class="canvas" canvas-id="pieCanvas"></canvas>
+                </view>
+            </view>
+            <view class="query-result-detail">
+                <view class="deteil-list-box">
+                    <view class="detail-list" wx:for="{{resultData[payOrIncome[typeIndex].type].detail}}" wx:key="index"
+                        data-ids="{{item.ids}}" bindtap="goDetail">
+                        <view class="detail-list-img-box">
+                            <image class="detail-list-img" src="{{item.data[0].typeData.url}}" mode="widthFix">
+                            </image>
+                        </view>
+                        <view class="list-detail">
+                            <view class="detail-list-path">
+                                <view class="detail-list-title">
+                                    {{item.data[0].typeData.text}}
+                                </view>
+                                <view class="detail-list-money {{typeIndex==0?'red':'green'}}">
+                                    ¥{{util.thousandthPlace(item.total) }}
+                                </view>
+                            </view>
+                            <view class="detail-list-count">
+                                <view class="detail-list-percent">
+                                    <view class="active-percent"
+                                        style="width: {{util.percentFn(item.total,total[item.resultType])}}; background-color:{{item.bgColor}}">
+
+                                    </view>
+                                </view>
+                                <view class="detail-list-num">
+                                    {{item.data.length}}笔
+                                </view>
+                            </view>
+                        </view>
+                        <view class="right-arrow">
+                            <image class="right" src="../../icons/right.png" mode="widthFix">
+
+                            </image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,67 @@
+// 千分位处理
+var thousandthPlace = function(v) {
+    //按照 . 切割，分为整数和小数两个部分
+    var va = v;
+    va = Number(va).toFixed(2)
+    // //console.log("va",va)
+    if (va < 0) {
+        va = -va;
+    }
+    var num = va.toString().split('.');
+
+    //整数部分
+    var intNum = num[0];
+
+    //小数部分
+    var decimalNum = num[1];
+    var ints = [];
+
+    //处理整数部分的千分位
+    for (var i = intNum.length - 1; i >= 0; i -= 3) {
+        var index = i - 2 < 0 ? 0 : i - 2;
+        var currentInt = intNum.slice(index, i + 1);
+        ints.unshift(currentInt);
+    }
+
+    ints = ints.join(',');
+
+    //如果存在小数部分,则需要拼接小数部分
+    if (decimalNum !== undefined) {
+        ints += '.' + decimalNum;
+    }
+    if (v < 0) {
+        ints = '- ' + ints
+    }
+    return ints;
+}
+
+// 结余计算
+var balanceFn = function(a, b) {
+        var balance = a - b
+        balance = balance.toFixed(2);
+        
+        balance = balance.split(".")
+        // //console.log("balance1",balance[0])
+        // balance[0] = thousandthPlace(balance[0])
+        
+        return balance
+    }
+    // 获取月份
+var getMonthFn = function(date) {
+        return date.slice("2020-".length, "2020-07".length)
+    }
+    // 计算百分比
+var percentFn = function(a, b) {
+    var m = a;
+    m = Number(m)
+    var n = b;
+    n = Number(n);
+    return (m / n * 100).toFixed(2) + '%'
+}
+
+module.exports = {
+    thousandthPlace: thousandthPlace,
+    balanceFn: balanceFn,
+    getMonthFn: getMonthFn,
+    percentFn: percentFn,
+}

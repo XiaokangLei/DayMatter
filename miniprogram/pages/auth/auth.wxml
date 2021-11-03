@@ -1,0 +1,10 @@
+<button class="default" size="default" wx:if="{{canIUseGetUserProfile}}"
+    hover-class="button-hover"
+    bindtap="getUserProfile">
+    点击授权
+</button>
+<button class="default" size="default" wx:else
+    hover-class="button-hover"
+    open-type="getUserInfo" bindgetuserinfo="getuserInfo">
+    点击授权
+</button>

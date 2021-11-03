@@ -1,0 +1,33 @@
+<view class="my" >
+     <view class="content-box">
+        <view class="content-box-img">
+            <image class="hdimg" src="{{userInfo.avatarUrl}}" mode="widthFix">
+            </image>
+        </view>
+        <view class="myname">
+            {{userInfo.nickName}}
+        </view>
+    </view>
+    <view class="toool-list">
+        <view class="allBooking list"  hover-class="hover" data-url='bookingLists' bindtap="gopage">
+            <view class="text">
+                我的记账
+            </view>
+            <view class="right-arrow">
+                 <image class="right" src="../../icons/right.png" mode="widthFix">
+                 </image>
+                             
+            </view>
+
+        </view>
+        <view class="COVID list" hover-class="hover" data-url='COVID'  bindtap="gopage">
+            <view class="text">
+                 疫情监控
+            </view>
+            <view class="right-arrow">
+                 <image class="right" src="../../icons/right.png" mode="widthFix">
+                </image>  
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,57 @@
+<view class="booking">
+    <view class="content">
+        <view class="type-list">
+            <view class="choose">
+                <view class="pay-or-income">
+                    <view class="income  {{payOrIncomeIndex==index?'IsChoose':''}}" wx:for="{{payOrIncome}}"
+                        wx:key="index" bindtap="toggleTab" data-index="{{index}}" data-type="payOrIncomeIndex">
+                        {{item.text}}
+                    </view>
+                </view>
+            </view>
+            <view class="types {{IsRotate?'rotate':''}}">
+                <view class="type {{typeDataIndex==index?'typeChooseNow':''}}" wx:for="{{typeData}}" wx:key="index"
+                    bindtap="toggleTab" data-index="{{index}}" data-type="typeDataIndex">
+                    <view class="type-img">
+                        <!-- <image class="type-img-a" src="{{item.url}}"> -->
+                            <text style="font-size: x-large;">{{item.url}}</text>
+                        <!-- </image> -->
+                    </view>
+                    <view class="text">
+                        {{item.text}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="path-list">
+            <view class="path-title ">账户选择</view>
+            <view class="line"></view>
+            <view class="paths">
+                <view class="pathChoose {{pathDataIndex==index?'pathNow':''}}" wx:for="{{pathData}}" wx:key="index"
+                    bindtap="toggleTab" data-index="{{index}}" data-type="pathDataIndex">{{item.text}}</view>
+            </view>
+        </view>
+        <view class="date-list">
+            <view class="date">
+                <label class="date-text">日期:</label>
+                <picker mode="date" data-key="date" end="{{lastDate}}" class="input" bindchange="detailChange">
+                    <view class="picker">
+                        {{detailData.date?detailData.date:'请选择日期'}}
+                    </view>
+                </picker>
+            </view>
+            <view class="money ">
+                <label class="date-text">金额:</label><input class="input" id="money-text" placeholder="请输入金额"
+                    maxlength="13" type="digit" value="{{detailData.money}}" data-key="money"
+                    bindchange="detailChange" />
+            </view>
+            <view class="comment ">
+                <label class="date-text">备注:</label><input maxlength="18" type="text" class="input" id="comments-text"
+                    placeholder="最多18字符" data-key="message" value="{{detailData.message}}" bindchange="detailChange" />
+            </view>
+        </view>
+        <view class="save-btn" bindtap="saveData">
+            保存
+        </view>
+    </view>
+</view>

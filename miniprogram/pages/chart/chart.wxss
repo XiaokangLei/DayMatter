@@ -1,0 +1,165 @@
+.red {
+  color: #e4393c;
+}
+.green {
+  color: #2E8B57;
+}
+.chart {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 28rpx;
+  background-color: #eeeeee66;
+  overflow-y: auto;
+}
+.chart .query-box {
+  height: 64rpx;
+  padding: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f07a7a;
+  color: #555;
+}
+.chart .query-box .date-select {
+  height: 64rpx;
+  line-height: 64rpx;
+  min-width: 160rpx;
+  text-align: center;
+  background-color: #ffffffb9;
+  border-radius: 16rpx;
+  flex: 1;
+  text-align: left;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+}
+.chart .query-box .term-select {
+  height: 64rpx;
+  line-height: 64rpx;
+  min-width: 160rpx;
+  text-align: center;
+  background-color: #ffffffb9;
+  border-radius: 16rpx;
+}
+.chart .query-result {
+  height: calc(100% - 64rpx);
+}
+.chart .query-result .query-result-money {
+  height: 126rpx;
+  padding: 24rpx 0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+}
+.chart .query-result .query-result-money .money-pay-box {
+  padding: 20rpx;
+  border-radius: 16rpx;
+  font-weight: bold;
+  text-align: center;
+  color: #ccc;
+  font-size: 28rpx;
+  border: 2rpx solid #cccccc;
+  transition: border 0.3s;
+}
+.chart .query-result .query-result-money .money-pay-box .money-pay-money {
+  margin-top: 6rpx;
+  transition: color 0.3s;
+  color: #ccc;
+}
+.chart .query-result .query-result-money .money-pay-box.result-pay {
+  border: 2rpx solid #e4393c;
+  color: #333;
+}
+.chart .query-result .query-result-money .money-pay-box.result-pay .money-pay-money {
+  color: #e4393c;
+}
+.chart .query-result .query-result-money .money-pay-box.result-income {
+  border: 2rpx solid #2E8B57;
+  color: #333;
+}
+.chart .query-result .query-result-money .money-pay-box.result-income .money-pay-money {
+  color: #2E8B57;
+}
+.chart .query-result .query-result-chart-box {
+  background-color: #fff;
+  margin: 20rpx 0;
+  min-height: 600rpx;
+  position: relative;
+}
+.chart .query-result .query-result-chart-box .empty {
+  color: #777;
+  text-align: center;
+  padding: 80rpx 0;
+}
+.chart .query-result .query-result-chart-box .havedata {
+  height: 680rpx;
+  width: 100%;
+}
+.chart .query-result .query-result-chart-box .havedata .canvas {
+  width: 100%;
+  height: 680rpx;
+}
+.chart .query-result .query-result-detail {
+  margin-bottom: 120rpx;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list {
+  border-bottom: 2rpx solid #eee;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 16rpx 20rpx;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .detail-list-img-box {
+  width: 64rpx;
+  height: 64rpx;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .detail-list-img-box .detail-list-img {
+  width: 100%;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .list-detail {
+  margin: 0 20rpx 0 20rpx;
+  color: #333;
+  flex: 1;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .list-detail .detail-list-path {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14rpx;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .list-detail .detail-list-path .detail-list-title {
+  margin-right: auto;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .list-detail .detail-list-count {
+  display: flex;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .list-detail .detail-list-count .detail-list-percent {
+  margin-right: auto;
+  max-width: 450rpx;
+  width: 450rpx;
+  height: 24rpx;
+  overflow: hidden;
+  border-radius: 14rpx;
+  background-color: #eee;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .list-detail .detail-list-count .detail-list-percent .active-percent {
+  width: 0;
+  transition: width 0.4s, background-color 0.4s;
+  height: 24rpx;
+  border-radius: 14rpx;
+  background-color: #75b691;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .list-detail .detail-list-count .detail-list-num {
+  font-size: 24rpx;
+  line-height: 22rpx;
+  color: #666;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .right-arrow {
+  width: 50rpx;
+  height: 50rpx;
+}
+.chart .query-result .query-result-detail .deteil-list-box .detail-list .right-arrow .right {
+  width: 100%;
+}

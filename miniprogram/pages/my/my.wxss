@@ -1,0 +1,61 @@
+.my {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #eeeeee66;
+  color: #333333;
+}
+.my .content-box {
+  min-height: 200rpx;
+  background-color: #f07a7a;
+  padding: 60rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.my .content-box .content-box-img {
+  width: 196rpx;
+  height: 196rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 60rpx;
+  background-color: #eeeeee;
+  box-shadow: 0 0 12rpx 12rpx rgba(255, 255, 255, 0.3);
+}
+.my .content-box .content-box-img .hdimg {
+  width: 100%;
+  height: auto;
+}
+.my .content-box .myname {
+  max-height: 356rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.952);
+}
+.my .toool-list .allBooking {
+  border-bottom: 4rpx solid #eee;
+}
+.my .toool-list .list {
+  background-color: #fff;
+  height: 100rpx;
+  color: #555;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  padding-right: 20rpx;
+  padding-left: 30rpx;
+}
+.my .toool-list .list .right-arrow {
+  margin-left: auto;
+  width: 46rpx;
+  height: 46rpx;
+}
+.my .toool-list .list .right-arrow .right {
+  width: 100%;
+}
+.my .hover {
+  background-color: #eeeeee!important;
+}

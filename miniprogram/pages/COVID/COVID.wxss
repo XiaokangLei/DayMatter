@@ -1,0 +1,93 @@
+.COVID {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eeeeee66;
+  padding: 30rpx;
+}
+.COVID .country {
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  padding-bottom: 30rpx;
+}
+.COVID .country .title {
+  height: 50rpx;
+  position: relative;
+  padding: 0 20rpx;
+}
+.COVID .country .title .line {
+  width: 8rpx;
+  height: 30rpx;
+  background-color: #f07a7a;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.COVID .country .title .txt {
+  color: #f07a7a;
+  font-weight: bold;
+  font-size: 28rpx;
+  margin-left: 16rpx;
+  line-height: 50rpx;
+}
+.COVID .country .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.COVID .country .content > .data-item:nth-child(3n) > .count {
+  border-right: none;
+}
+.COVID .country .content .data-item {
+  width: calc(33% - 10rpx);
+  padding: 20rpx 5rpx;
+  height: 100rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+.COVID .country .content .data-item .item-title {
+  color: #555;
+}
+.COVID .country .content .data-item .count {
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-weight: bold;
+  border-right: 4rpx solid #dddddd;
+}
+.COVID .country .content .data-item .new {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 18rpx;
+  color: #bdbdbd;
+}
+.COVID .country .content .data-item .new text {
+  font-size: 24rpx;
+  color: #333;
+}
+.COVID .country .content .data-item .new .danger {
+  color: #e4393c;
+}
+.COVID .country .content .data-item .new .safe {
+  color: #2E8B57;
+}
+.COVID .country .content .data-item.temp {
+  height: 0;
+}
+.COVID .mes {
+  font-size: 20rpx;
+  color: #777;
+  display: flex;
+  margin-top: 44rpx;
+  padding: 0 30rpx;
+}
+.COVID .mes .updateTime {
+  margin-left: auto;
+}

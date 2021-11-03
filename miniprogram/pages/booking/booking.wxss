@@ -1,0 +1,178 @@
+.base-type {
+  border-radius: 18.97rpx;
+  background-color: #fff;
+}
+.booking {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.booking .content {
+  position: relative;
+  padding: 0 18.97rpx;
+  padding-top: 86rpx;
+  height: 100%;
+  color: #444444;
+  background-image: linear-gradient(to bottom, #f0827a 15%, #f5f5f5 5%, #f5f5f5 5%, #f5f5f5 25%, #f5f5f5 20%, #f5f5f5 30%);
+}
+.booking .content .type-list {
+  border-radius: 18.97rpx;
+  background-color: #fff;
+  height: 440rpx;
+}
+.booking .content .type-list .choose {
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.booking .content .type-list .choose .pay-or-income {
+  width: 206rpx;
+  height: 66rpx;
+  border: 2rpx solid #f1877f;
+  border-radius: 33rpx;
+  box-sizing: border-box;
+}
+.booking .content .type-list .choose .pay-or-income .income {
+  float: left;
+  height: 62rpx;
+  width: 50%;
+  line-height: 62rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #e9817a;
+  transition: background-color 0.3s;
+}
+.booking .content .type-list .choose .pay-or-income .income:first-child {
+  border-radius: 31rpx 0 0 31rpx;
+}
+.booking .content .type-list .choose .pay-or-income .income:last-child {
+  border-radius: 0 31rpx  31rpx 0;
+}
+.booking .content .type-list .choose .pay-or-income .income.IsChoose {
+  background-color: #ee7269;
+  color: #fff;
+}
+.booking .content .type-list .types {
+  transition: transform .35s;
+  transform-origin: 1000px bottom;
+  display: flex;
+  flex-wrap: wrap;
+  /* 父盒子有高度一定要这个让子元素紧接着排序 */
+  align-content: flex-start;
+  overflow: hidden;
+}
+.booking .content .type-list .types.rotate {
+  transform: rotate(360deg);
+}
+.booking .content .type-list .types .type {
+  /* flex: 1; */
+  width: 20%;
+  height: 138rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.booking .content .type-list .types .type.typeChooseNow .type-img {
+  transition: transform 0.3s;
+  transform: scale(1.2);
+}
+.booking .content .type-list .types .type.typeChooseNow .text {
+  color: #f19790;
+  transition: font-size 0.3s, margin-top 0.3s;
+  margin-top: 16rpx;
+  font-size: 26rpx;
+}
+.booking .content .type-list .types .type .type-img {
+  width: 68rpx;
+  height: 68rpx;
+  margin: 10rpx auto;
+}
+.booking .content .type-list .types .type .type-img .type-img-a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.booking .content .path-list {
+  border-radius: 18.97rpx;
+  background-color: #fff;
+  height: 173.65rpx;
+  margin: 18.24rpx 0;
+  padding: 0 21rpx;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+.booking .content .path-list .path-title {
+  line-height: 76rpx;
+  height: 76rpx;
+  font-size: 27rpx;
+}
+.booking .content .path-list .line {
+  height: 4rpx;
+  width: 100%;
+  background-color: #e6e6e6;
+}
+.booking .content .path-list .paths {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 86.8rpx;
+}
+.booking .content .path-list .paths .pathChoose {
+  color: #555555;
+  height: 50rpx;
+  width: 120rpx;
+  font-size: 24rpx;
+  border-radius: 25rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background-color: #e8e8e8b4;
+  transition: background-color 0.3s;
+}
+.booking .content .path-list .paths .pathChoose.pathNow {
+  background-color: #fa938c;
+  color: #FFFFFF;
+}
+.booking .content .date-list {
+  border-radius: 18.97rpx;
+  background-color: #fff;
+  height: 257.56rpx;
+  margin-bottom: 22rpx;
+  padding: 21rpx;
+  box-sizing: border-box;
+}
+.booking .content .date-list .date,
+.booking .content .date-list .money,
+.booking .content .date-list .comment {
+  height: 70.8rpx;
+  line-height: 70.8rpx;
+  font-size: 28rpx;
+  display: flex;
+}
+.booking .content .date-list .input {
+  margin-left: 42rpx;
+  width: 80%;
+  padding: 10rpx 14rpx ;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  height: 70rpx;
+  box-sizing: border-box;
+  color: #555555;
+}
+.booking .content .date-list .picker {
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #838383;
+}
+.booking .content .save-btn {
+  border-radius: 18.97rpx;
+  background-color: #fff;
+  text-align: center;
+  height: 82rpx;
+  line-height: 82rpx;
+  width: 100%;
+  background-color: #ee7269;
+  color: #FFFFFF;
+}

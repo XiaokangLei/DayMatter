@@ -1,0 +1,38 @@
+<wxs src="../../js/thousandthPlace.wxs" module ="util"/>
+<view class="detail">
+    <view class="data-box">
+        <view class="data-list-box">
+
+            <view class="data-list">
+                <view class="data-item" wx:for="{{dateBooking}}" wx:key="index">
+                    <view class="item-img-box">
+                        <image class="item-img" src="{{item.typeData.url}}" mode="widthFix">
+                        </image>
+                    </view>
+                    <view class="item-other-box" >
+                        <view class="item-other-title" >
+                           <view class="item-other-title-box" >
+                                <view class="item-tab" >
+                                {{item.typeData.text}}
+                                </view>
+                                <view class="item-path" >
+                                    {{item.pathData.text}}
+                                </view>
+                           </view>
+                            <view class="item-mes" >
+                            {{item.detailData.message}}
+                            </view>
+                        </view>
+                        <view class="bookadate">
+                            {{item.detailData.date}}
+                        </view>
+                        <view class="money {{item.payOrIncometype=='pay'?'green':'red'}}" >
+                            ¥ {{util.thousandthPlace(item.detailData.money)}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

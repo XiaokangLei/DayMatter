@@ -67,8 +67,8 @@
       </view>
     </view> -->
 
-    <view class='radius shadow-lg' style="max-height: 1450rpx;">
-      <scroll-view class="pro_list" scroll-y style="height: 1400rpx;">
+    <view class='radius shadow-lg' style="min-height: 100%;">
+      <scroll-view class="pro_list" scroll-y style="min-height:100%;">
         <view class="grid col-1 padding-sm" style="margin-bottom: 140rpx;">
           <view class="padding-sm" wx:for="{{eventList}}" wx:key="item">
             <view class="bg-{{item.bg_color}} padding-sm radius text-center light" bindtap="jumpPageDetail"
@@ -109,8 +109,6 @@
     </view>
 
   </view>
-
-
 
 </view>
 

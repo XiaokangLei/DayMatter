@@ -18,7 +18,7 @@
 
   <view class="button_type bg-orange" bindtap="jumpPage" data-page="addEvent"
     data-emoji="{{emoji}}" hover-class="item-hover" hover-stay-time="100">
-    <text class="margin-tb-sm text-xxl">确认选择{{iconList[emojiNum-1].emoji}}</text>
+    <text class="margin-tb-sm text-xxl">确认选择{{emoji}}</text>
   </view>
 
 </view>

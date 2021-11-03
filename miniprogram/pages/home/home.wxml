@@ -1,0 +1,86 @@
+<wxs src="../../js/thousandthPlace.wxs" module="util" />
+<view class="container_index">
+
+    <view class="home">
+        <view class="content-box">
+            <view class="conttent-title">
+                {{util.getMonthFn(searchDate)}}月结余
+            </view>
+            <view class="content-money {{monthTotal.income-monthTotal.pay<0?'red':''}}">
+                <view class="content-money-int" wx:if="{{monthTotal.income-monthTotal.pay==0}}"> ¥ 0</view>
+                <view class="content-money-int" wx:else> ¥ {{util.balanceFn(monthTotal.income,monthTotal.pay)[0]}}
+                </view>
+                <view class="content-money-float">.{{util.balanceFn(monthTotal.income,monthTotal.pay)[1]}}</view>
+            </view>
+
+            <view class="pay-income-box">
+                <view class="month-income">{{util.getMonthFn(searchDate)}}月总收入
+                    <view class="income-money">
+                        ¥ {{util.thousandthPlace(monthTotal.income)}}
+                    </view>
+                </view>
+                <view class="line"></view>
+                <view class="month-income month-right">{{util.getMonthFn(searchDate)}}月总支出
+                    <view class="income-money">
+                        ¥ {{util.thousandthPlace(monthTotal.pay)}}
+                    </view>
+                </view>
+            </view>
+
+        </view>
+        <view class="date-choose-box">
+            <view class="date-today">{{searchDate}}</view>
+            <view class="today-income">收入 ¥{{util.thousandthPlace(dayTotal.income)}}</view>
+            <view class="today-pay">支出 ¥{{util.thousandthPlace(dayTotal.pay)}}</view>
+
+            <view class="date-choose">
+                <picker mode="date" data-key="date" end="{{lastDate}}" bindchange="changeDate">
+                    <view class="picker">
+                        <view class="dot">
+                        </view>
+                        <view class="dot">
+                        </view>
+                        <view class="dot">
+                        </view>
+                    </view>
+                </picker>
+            </view>
+
+        </view>
+        <view class="data-box">
+            <view class="data-list-box">
+
+                <view class="data-list" wx:if="{{dateBooking.length>0}}">
+                    <view class="data-item" wx:for="{{dateBooking}}" wx:key="index">
+                        <view class="item-img-box">
+                            {{item.typeData.url}}
+                        </view>
+                        <view class="item-other-box">
+                            <view class="item-other-title">
+                                <view class="item-other-title-box">
+                                    <view class="item-tab">
+                                        {{item.typeData.text}}
+                                    </view>
+                                    <view class="item-path">
+                                        {{item.pathData.text}}
+                                    </view>
+                                </view>
+                                <view class="item-mes">
+                                    {{item.detailData.message}}
+                                </view>
+                            </view>
+
+                            <view class="money {{item.payOrIncometype=='pay'?'green':'red'}}">
+                                ¥ {{util.thousandthPlace(item.detailData.money)}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="no-data" wx:else>
+                    这天还没写账单...
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>
