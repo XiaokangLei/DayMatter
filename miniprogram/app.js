@@ -4,7 +4,7 @@ const {
 } = require('envList.js')
 
 App({
-  onLaunch: function () {
+  onLaunch: async function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -45,8 +45,45 @@ App({
 
       }
       this.updateManager();
+      // this.globalData.isAuth = await this.hasUserInfo();
+      // 如果是2.10.4以上的基础库
+      if (wx.getUserProfile) {
+
+        this.globalData.isAuth = await this.hasUserInfo();
+
+        if (this.isAuthCB) {
+          this.isAuthCB()
+        }
+      } else {
+        // 获取用户授权信息(旧版获取授权)
+        wx.getSetting({
+
+          success: res => {
+            this.globalData.isAuth = res.authSetting['scope.userInfo'];
+            // 添加回调函数isAuthCB(名字自定义)，有则执行
+            if (this.isAuthCB) {
+              this.isAuthCB(res)
+            }
+          }
+        })
+      }
     }
 
+  },
+  //获取用户授权信息
+  hasUserInfo: async function () {
+    if (this.globalData.userInfo && this.globalData.userInfo.nickName && this.globalData.userInfo.avatarUrl) return true
+
+    let res = await await wx.cloud.callFunction({
+      name: 'get_user'
+    })
+    let data = res.result.data && res.result.data.length > 0 ? res.result.data[0] : {};
+    if (data.nickName && data.avatarUrl) {
+      this.globalData.userInfo = data;
+      return true
+    } else {
+      return false
+    }
   },
   /**
    * 小程序主动更新

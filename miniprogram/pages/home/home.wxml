@@ -1,33 +1,108 @@
 <wxs src="../../js/thousandthPlace.wxs" module="util" />
 <view class="container_index">
 
-    <view class="home">
-        <view class="content-box">
-            <view class="conttent-title">
-                {{util.getMonthFn(searchDate)}}月结余
-            </view>
-            <view class="content-money {{monthTotal.income-monthTotal.pay<0?'red':''}}">
-                <view class="content-money-int" wx:if="{{monthTotal.income-monthTotal.pay==0}}"> ¥ 0</view>
-                <view class="content-money-int" wx:else> ¥ {{util.balanceFn(monthTotal.income,monthTotal.pay)[0]}}
-                </view>
-                <view class="content-money-float">.{{util.balanceFn(monthTotal.income,monthTotal.pay)[1]}}</view>
-            </view>
+    <view class='radius shadow-lg grid col-1 padding'>
+        <view class="bg-red padding-xs radius light" hover-class="item-hover" hover-stay-time="100">
+            <view class="content-box">
 
-            <view class="pay-income-box">
-                <view class="month-income">{{util.getMonthFn(searchDate)}}月总收入
-                    <view class="income-money">
-                        ¥ {{util.thousandthPlace(monthTotal.income)}}
+                <view class="padding-xs text-df">
+                    <view class="flex">
+                        <view class="flex-sub padding-sm margin-xs radius text-center text-lg">
+                            <view class="">
+                                {{util.getMonthFn(searchDate)}}月结余
+                            </view>
+                            <view class="content-money text-lg {{monthTotal.income-monthTotal.pay<0?'red':''}}">
+                                <view class="content-money-int" wx:if="{{monthTotal.income-monthTotal.pay==0}}"> ¥ 0
+                                </view>
+                                <view class="content-money-int" wx:else> ¥
+                                    {{util.balanceFn(monthTotal.income,monthTotal.pay)[0]}}.{{util.balanceFn(monthTotal.income,monthTotal.pay)[1]}}
+                                </view>
+                            </view>
+                        </view>
+                        <view class="flex-sub  padding-sm margin-xs radius text-center">
+                        </view>
+
+                        <view class="flex-sub padding-sm margin-xs radius text-center">
+
+                        </view>
                     </view>
                 </view>
-                <view class="line"></view>
-                <view class="month-income month-right">{{util.getMonthFn(searchDate)}}月总支出
-                    <view class="income-money">
-                        ¥ {{util.thousandthPlace(monthTotal.pay)}}
+
+                <view class="padding-xs text-df">
+                    <view class="flex">
+                        <view class="flex-sub padding-sm margin-xs radius text-center">
+                            <view class="month-income text-lg">{{util.getMonthFn(searchDate)}}月收入
+                                <view class="income-money">
+                                    ¥ {{util.thousandthPlace(monthTotal.income)}}
+                                </view>
+                            </view>
+                        </view>
+                        <view class="flex-sub  padding-sm margin-xs radius text-center">
+                        </view>
+
+                        <view class="flex-sub padding-sm margin-xs radius text-center">
+                            <view class="month-income month-right text-lg">{{util.getMonthFn(searchDate)}}月支出
+                                <view class="income-money">
+                                    ¥ {{util.thousandthPlace(monthTotal.pay)}}
+                                </view>
+                            </view>
+                        </view>
                     </view>
                 </view>
-            </view>
 
+            </view>
         </view>
+
+        <view class="padding-xs text-df">
+            <view class="flex">
+                <view class="flex-sub radius">
+                    <view class="date-today">{{searchDate}}</view>
+                </view>
+                <view class="flex-twice radius text-center">
+                    <view class="text-green">收入 ¥{{util.thousandthPlace(dayTotal.income)}}</view>
+                    <view class="text-red">支出 ¥{{util.thousandthPlace(dayTotal.pay)}}</view>
+                </view>
+
+                <view class="flex-sub radius ">
+                    <view class="date-choose">
+                        <picker mode="date" data-key="date" end="{{lastDate}}" bindchange="changeDate">
+                            <view class="picker">
+                                <view class="dot">
+                                </view>
+                                <view class="dot">
+                                </view>
+                                <view class="dot">
+                                </view>
+                            </view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="cu-timeline text-xl" wx:for="{{dateBooking}}" wx:key="index">
+            <!-- <view class="cu-time">昨天</view> -->
+            <view class="cu-item cur cuIcon-{{item.typeData.icon}}">
+                <view class="padding-xs text-df bg-grey light radius">
+                    <view class="flex">
+                        <view class="flex-twice padding-sm margin-xs radius text-left">
+                            {{item.detailData.message}}
+                        </view>
+                        <view
+                            class="flex-sub  padding-sm margin-xs radius text-right text-{{item.payOrIncometype=='pay'?'green':'red'}}">
+                            {{item.pathData.text}}¥{{util.thousandthPlace(item.detailData.money)}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="no-data" wx:if="{{dateBooking.length<1}}">
+            这天还没写账单...
+        </view>
+
+    </view>
+
+    <!-- <view class="home" style="margin-top: 500rpx;">
         <view class="date-choose-box">
             <view class="date-today">{{searchDate}}</view>
             <view class="today-income">收入 ¥{{util.thousandthPlace(dayTotal.income)}}</view>
@@ -81,6 +156,6 @@
                 </view>
             </view>
         </view>
-    </view>
+    </view> -->
 
 </view>

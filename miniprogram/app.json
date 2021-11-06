@@ -1,15 +1,14 @@
 {
   "pages": [
-    "pages/chart/chart",
     "pages/home/home",
+    "pages/chart/chart",
+    
     "pages/index/index",
     "pages/choiseEmoji/index",
     "pages/addEvent/index",
     "pages/detailEvent/index",
     "pages/about/index",
     "pages/modifyEvent/index",
-    
-    
     "pages/my/my",
     "pages/booking/booking",
     "pages/auth/auth",

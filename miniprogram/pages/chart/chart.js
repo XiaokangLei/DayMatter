@@ -125,8 +125,8 @@ Page({
                 wx.hideLoading();
                 resData = res.result ? res.result : [];
                 // 
-                // //console.log("date",date)
-                // //console.log("resData",res)
+                console.log("date",date)
+                console.log("resData",res)
                 // 统计账单
                 this.countTotal(resData)
                 this.manageData(resData)
@@ -155,6 +155,7 @@ Page({
                 },
             }
         }
+        console.log("data",data)
         data.forEach((v, i) => {
             let da = res[v.payOrIncometype]
             if (da.type.indexOf(v.typeDatatype) == -1) {
@@ -230,6 +231,7 @@ Page({
         }
 
         let total = Object.assign({}, this.data.total);
+        console.log("total",total)
 
         total.pay = pay;
         total.income = income;
@@ -252,7 +254,8 @@ Page({
 
     // 绘制饼状图
     drawpie: function() {
-
+        console.log(this.data.payOrIncome)
+        console.log(this.data.total)
         let type = this.data.payOrIncome[this.data.typeIndex].type;
         let total = Number(this.data.total[type])
         if (total == 0) {
@@ -261,12 +264,14 @@ Page({
             })
             return
         }
+        console.log(this.data.resultData)
         let detail = Object.assign({}, this.data.resultData[type].detail)
 
 
         let series = [];
         for (let v in detail) {
             let item = {};
+            console.log(v)
             // 根据wxCharts配置相关参数
             item.name = detail[v].data[0].typeData.text;
             item.data = Number(detail[v].total);

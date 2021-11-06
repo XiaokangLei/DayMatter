@@ -2070,7 +2070,7 @@ button.icon.lg {
 
 .cu-timeline {
 	display: block;
-	background-color: var(--white);
+	/* background-color: var(--white); */
 }
 
 .cu-timeline .cu-time {
@@ -2083,7 +2083,7 @@ button.icon.lg {
 }
 
 .cu-timeline>.cu-item {
-	padding: 30rpx 30rpx 30rpx 120rpx;
+	padding: 30rpx 30rpx 30rpx 80rpx;
 	position: relative;
 	display: block;
 	z-index: 0;
@@ -2099,7 +2099,7 @@ button.icon.lg {
 	position: absolute;
 	width: 1rpx;
 	background-color: #ddd;
-	left: 60rpx;
+	left: 40rpx;
 	height: 100%;
 	top: 0;
 	z-index: 8;
@@ -2109,15 +2109,15 @@ button.icon.lg {
 	font-family: "cuIcon";
 	display: block;
 	position: absolute;
-	top: 36rpx;
+	top: 60rpx;
 	z-index: 9;
-	background-color: var(--white);
+	/* background-color: var(--white); */
 	width: 50rpx;
 	height: 50rpx;
 	text-align: center;
 	border: none;
 	line-height: 50rpx;
-	left: 36rpx;
+	left: 16rpx;
 }
 
 .cu-timeline>.cu-item:not([class*="cuIcon-"])::before {
@@ -2125,17 +2125,17 @@ button.icon.lg {
 }
 
 .cu-timeline>.cu-item[class*="cuIcon-"]::before {
-	background-color: var(--white);
+	/* background-color: var(--white); */
 	width: 50rpx;
 	height: 50rpx;
 	text-align: center;
 	border: none;
 	line-height: 50rpx;
-	left: 36rpx;
+	left: 16rpx;
 }
 
 .cu-timeline>.cu-item>.content {
-	padding: 30rpx;
+	padding: 18rpx;
 	border-radius: 6rpx;
 	display: block;
 	line-height: 1.6;

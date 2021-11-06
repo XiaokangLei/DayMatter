@@ -12,9 +12,9 @@
             <view class="types {{IsRotate?'rotate':''}}">
                 <view class="type {{typeDataIndex==index?'typeChooseNow':''}}" wx:for="{{typeData}}" wx:key="index"
                     bindtap="toggleTab" data-index="{{index}}" data-type="typeDataIndex">
-                    <view class="type-img">
+                    <view class="type-img text-xxxl">
                         <!-- <image class="type-img-a" src="{{item.url}}"> -->
-                            <text style="font-size: x-large;">{{item.url}}</text>
+                            <text class="cuIcon-{{item.icon}} text-{{item.color}} "></text>
                         <!-- </image> -->
                     </view>
                     <view class="text">
