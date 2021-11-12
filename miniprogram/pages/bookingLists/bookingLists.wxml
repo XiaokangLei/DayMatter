@@ -1,46 +1,49 @@
-<wxs src="../../js/thousandthPlace.wxs" module ="util"/>
-<view class="detail">
-    <view class="data-box">
-        <view class="data-list-box">
-            <view class="no-data"  wx:if="{{!(bookingData.length>0)}}"> 
+<wxs src="../../js/thousandthPlace.wxs" module="util" />
+<view class="container_index">
+    <view class="detail">
+        <view class="data-box">
+            <view class="data-list-box">
+                <view class="no-data" wx:if="{{!(bookingData.length>0)}}">
                     暂无数据...
-            </view>
-            <view class="data-list" wx:else>
-                <view class="data-item" wx:for="{{bookingData}}"  wx:key="index" >
-                    <view class="item-img-box">
-                        <image class="item-img" src="{{item.typeData.url}}" mode="widthFix">
-                        </image>
-                    </view>
-                    <view class="item-other-box" >
-                        <view class="item-other-title" >
-                           <view class="item-other-title-box" >
-                                <view class="item-tab" >
-                                {{item.typeData.text}}
+                </view>
+                <view class="data-list" wx:else>
+                    <view class="data-item" wx:for="{{bookingData}}" wx:key="index">
+                        <view class="item-img-box">
+                            <!-- <image class="item-img" src="{{item.typeData.url}}" mode="widthFix">
+                        </image> -->
+                            <text class="text-xxl">{{item.typeData.url}}</text>
+                        </view>
+                        <view class="item-other-box">
+                            <view class="item-other-title">
+                                <view class="item-other-title-box">
+                                    <view class="item-tab">
+                                        {{item.typeData.text}}
+                                    </view>
+                                    <view class="item-path">
+                                        {{item.pathData.text}}
+                                    </view>
                                 </view>
-                                <view class="item-path" >
-                                    {{item.pathData.text}}
+                                <view class="item-mes">
+                                    {{item.detailData.message}}
                                 </view>
-                           </view>
-                            <view class="item-mes" >
-                            {{item.detailData.message}}
+                            </view>
+                            <view class="bookadate">
+                                {{item.detailData.date}}
+                            </view>
+                            <view class="money {{item.payOrIncometype=='pay'?'green':'red'}}">
+                                ¥ {{util.thousandthPlace(item.detailData.money)}}
+                            </view>
+                            <view class="remove text-red text-xl" data-id="{{item._id}}" data-index="{{index}}"
+                                bindtap="removeById">
+                                <view class="cuIcon-deletefill "></view>
                             </view>
                         </view>
-                        <view class="bookadate">
-                            {{item.detailData.date}}
-                        </view>
-                        <view class="money {{item.payOrIncometype=='pay'?'green':'red'}}" >
-                            ¥ {{util.thousandthPlace(item.detailData.money)}}
-                        </view>
-                        <view class="remove" data-id ="{{item._id}}" data-index="{{index}}"  bindtap="removeById">
-                           <image class="remove-img" src="../../icons/delete.png" mode="widthFix">
-                            </image>
-                        </view>
                     </view>
-                </view>
-                
-            </view>
-            
-        </view>
-    </view>
 
+                </view>
+
+            </view>
+        </view>
+
+    </view>
 </view>

@@ -1,5 +1,7 @@
 // miniprogram/pages/COVID/COVID.js
-import { utils } from '../../js/utils.js'
+import {
+    utils
+} from '../../js/utils.js'
 Page({
 
     data: {
@@ -113,7 +115,7 @@ Page({
         freshTime: '2020-01-01'
     },
 
-    onLoad: function() {
+    onLoad: function () {
         wx.stopPullDownRefresh() //刷新完成后停止下拉刷新动效
         this.setData({
             freshTime: utils.formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')
@@ -121,10 +123,10 @@ Page({
         this.getCOVID()
     },
     //下拉刷新
-    onPullDownRefresh: function() {
+    onPullDownRefresh: function () {
         this.onLoad()
     },
-    getCOVID: function() {
+    getCOVID: function () {
         wx.showLoading({
             title: '加载中...',
             mask: true
@@ -158,10 +160,10 @@ Page({
 
                 }
             },
-            fail: function() {
+            fail: function () {
                 // fail
             },
-            complete: function() {
+            complete: function () {
                 // complete
             }
         })

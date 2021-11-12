@@ -153,6 +153,8 @@ Page({
             detailData
         })
     },
+    
+
 
     // 保存按钮
     saveData: function () {
@@ -163,8 +165,28 @@ Page({
                 content: '你还没有授权喔~',
                 success(res) {
                     if (res.confirm) {
-                        wx.navigateTo({
-                            url: '../auth/auth',
+                        //保存userInfo到DB
+                        wx.getUserProfile({
+                            desc: '用于数据展示',
+                            success(res){
+                                console.log("授权",res)
+                                let data = res.userInfo;
+                                if(!data) return
+                                app.globalData.userInfo = data;
+                                app.globalData.isAuth = true;
+                                wx.cloud.callFunction({
+                                    // 云函数名称
+                                    name: 'set_user',
+                                    data, 
+                                    success: res => {
+                                       //console.log("成功",res)
+                                    },
+                                    fail: function(err) {
+                                        //console.log(err)
+                                        // app.globalData.isAuth = false;
+                                    }
+                                })
+                            } 
                         })
                     } else if (res.cancel) {
                         // 

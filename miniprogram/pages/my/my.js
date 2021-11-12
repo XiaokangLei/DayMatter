@@ -22,9 +22,9 @@ Page({
 
     jumpAboutPage(e) {
         wx.navigateTo({
-          url: `/pages/${e.currentTarget.dataset.page}/index?openId=${app.globalData.openid}`,
+            url: `/pages/${e.currentTarget.dataset.page}/index?openId=${app.globalData.openid}`,
         })
-      },
+    },
 
     onShow: function () {
         //console.log("app.globalData.isAuth",app.globalData.isAuth)
@@ -47,7 +47,6 @@ Page({
                         let userInfo = {
                             nickName: res.userInfo.nickName,
                             avatarUrl: res.userInfo.avatarUrl,
-
                             city: res.userInfo.city || "",
                             country: res.userInfo.country || "",
                             gender: res.userInfo.gender || "",
@@ -72,11 +71,30 @@ Page({
                 content: '你还没有授权喔~',
                 success(res) {
                     if (res.confirm) {
-                        wx.navigateTo({
-                            url: '../auth/auth',
+                        wx.getUserProfile({
+                            desc: '用于数据展示',
+                            success(res){
+                                console.log("授权",res)
+                                let data = res.userInfo;
+                                if(!data) return
+                                app.globalData.userInfo = data;
+                                app.globalData.isAuth = true;
+                                wx.cloud.callFunction({
+                                    // 云函数名称
+                                    name: 'set_user',
+                                    data, 
+                                    success: res => {
+                                       //console.log("成功",res)
+                                    },
+                                    fail: function(err) {
+                                        //console.log(err)
+                                        // app.globalData.isAuth = false;
+                                    }
+                                })
+                            } 
                         })
                     } else if (res.cancel) {
-                        // 
+
                     }
                 }
             })
@@ -84,10 +102,15 @@ Page({
         }
     },
 
+
     gopage: function (e) {
         wx.navigateTo({
             url: '../' + e.currentTarget.dataset.url + '/' + e.currentTarget.dataset.url,
         })
-        // 
+    },
+    gopageabout: function (e) {
+        wx.navigateTo({
+            url: '../' + e.currentTarget.dataset.url + '/index'
+        })
     }
 })

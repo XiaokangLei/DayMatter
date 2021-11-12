@@ -1,33 +1,43 @@
-<view class="my" >
-     <view class="content-box">
-        <view class="content-box-img">
-            <image class="hdimg" src="{{userInfo.avatarUrl}}" mode="widthFix">
-            </image>
+<view class="container_index padding">
+    <view class="UCenter-bg bg-gradual-blue radius">
+        <view class="cu-avatar round xl" style="background-image:url({{userInfo.avatarUrl}});"></view>
+        <view class="text-xl">{{userInfo.nickName}}
         </view>
-        <view class="myname">
-            {{userInfo.nickName}}
-        </view>
+        <image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill"
+            class="gif-wave"></image>
     </view>
-    <view class="toool-list">
-        <view class="allBooking list"  hover-class="hover" data-url='bookingLists' bindtap="gopage">
-            <view class="text">
-                我的记账
-            </view>
-            <view class="right-arrow">
-                 <image class="right" src="../../icons/right.png" mode="widthFix">
-                 </image>
-                             
-            </view>
+    
+    <view class="my">
 
-        </view>
-        <view class="COVID list" hover-class="hover" data-url='COVID'  bindtap="gopage">
-            <view class="text">
-                 疫情监控
+        <view class="toool-list">
+            <view class="allBooking list radius margin-bottom-xs shadow-lg bg-grey light" hover-class="item-hover" hover-stay-time="100" data-url='bookingLists'
+                bindtap="gopage">
+                <view class="text">
+                    我的记账
+                </view>
+                <view class="right-arrow">
+                    <view class="cuIcon-right"></view>
+                </view>
             </view>
-            <view class="right-arrow">
-                 <image class="right" src="../../icons/right.png" mode="widthFix">
-                </image>  
+            <view class="allBooking list radius margin-bottom-xs shadow-lg bg-grey light" hover-class="item-hover" hover-stay-time="100" data-url='COVID'
+                bindtap="gopage">
+                <view class="text">
+                    疫情监控
+                </view>
+                <view class="right-arrow">
+                    <view class="cuIcon-right"></view>
+                </view>
+            </view>
+            <view class="About list radius margin-bottom-xs shadow-lg bg-grey light" hover-class="item-hover" hover-stay-time="100" data-url='about'
+                bindtap="gopageabout">
+                <view class="text">
+                    关于
+                </view>
+                <view class="right-arrow">
+                    <view class="cuIcon-right"></view>
+                </view>
             </view>
         </view>
     </view>
+
 </view>

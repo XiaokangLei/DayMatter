@@ -1,26 +1,29 @@
-<view class="COVID">
-  <view class="country" wx:for="{{COVIDData}}" wx:key="index">
-    <view class="title">
-      <view class="line"></view>
-      <text class="txt">{{item.title}}</text>
-    </view>
-    <view class="content">
-      <view wx:for="{{item.value}}" class="data-item" wx:key="index">
-        <view class="item-title">{{item.name}}</view>
-        <view class="count" style="color:{{item.color}}">{{item.count}}</view>
-        <view class="new" >
-          较昨日
-          <text class="{{item.new>0&&item.type!='curedCount'?'danger':''}}  {{item.new>0&&item.type=='curedCount'?'safe':''}} {{item.new<0?'danger':''}} ">{{item.new>0?'+':''}}{{item.new}}</text>
+<view class="container_index">
+  <view class="COVID">
+    <view class="country" wx:for="{{COVIDData}}" wx:key="index">
+      <view class="title">
+        <view class="line"></view>
+        <text class="txt">{{item.title}}</text>
+      </view>
+      <view class="content">
+        <view wx:for="{{item.value}}" class="data-item" wx:key="index">
+          <view class="item-title">{{item.name}}</view>
+          <view class="count" style="color:{{item.color}}">{{item.count}}</view>
+          <view class="new">
+            较昨日
+            <text
+              class="{{item.new>0&&item.type!='curedCount'?'danger':''}}  {{item.new>0&&item.type=='curedCount'?'safe':''}} {{item.new<0?'danger':''}} ">{{item.new>0?'+':''}}{{item.new}}</text>
+          </view>
         </view>
       </view>
     </view>
-  </view>
-  <view class="mes">
+    <view class="mes">
       <view class="source">
-          数据来源: 天行数据
+        数据来源: 天行数据
       </view>
       <view class="updateTime">
-          上次更新时间: {{freshTime}}
+        上次更新时间: {{freshTime}}
       </view>
+    </view>
   </view>
 </view>

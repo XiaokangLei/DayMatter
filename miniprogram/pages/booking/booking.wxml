@@ -41,7 +41,7 @@
                         </view>
                     </picker>
                 </view>
-                <view class="money ">
+                <view class="money">
                     <label class="date-text">金额:</label><input class="input" id="money-text" placeholder="请输入金额"
                         maxlength="13" type="digit" value="{{detailData.money}}" data-key="money"
                         bindchange="detailChange" />

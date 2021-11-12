@@ -1,15 +1,15 @@
+page {
+  width: 100%;
+  height: 100%;
+}
 .my {
-  position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  padding-top: 20rpx;
   bottom: 0;
-  background-color: #eeeeee66;
-  color: #333333;
 }
 .my .content-box {
   min-height: 200rpx;
-  background-color: #f07a7a;
   padding: 60rpx;
   box-sizing: border-box;
   display: flex;
@@ -21,7 +21,6 @@
   overflow: hidden;
   border-radius: 50%;
   margin-right: 60rpx;
-  background-color: #eeeeee;
   box-shadow: 0 0 12rpx 12rpx rgba(255, 255, 255, 0.3);
 }
 .my .content-box .content-box-img .hdimg {
@@ -33,13 +32,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: rgba(255, 255, 255, 0.952);
 }
-.my .toool-list .allBooking {
-  border-bottom: 4rpx solid #eee;
-}
+
 .my .toool-list .list {
-  background-color: #fff;
+  /* background-color: rgb(231, 231, 231); */
   height: 100rpx;
   color: #555;
   display: flex;
@@ -56,6 +52,49 @@
 .my .toool-list .list .right-arrow .right {
   width: 100%;
 }
-.my .hover {
-  background-color: #eeeeee!important;
+
+.UCenter-bg {
+  background-size: cover;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  padding-top: 10rpx;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.UCenter-bg text {
+  opacity: 0.8;
+}
+
+.UCenter-bg image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.UCenter-bg .gif-wave{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;  
+  height: 100rpx;   
+}
+
+map,.mapBox{
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;  
+  height: 100rpx;   
+}
+
+map,.mapBox{
+  width: 750rpx;
+  height: 300rpx;
 }

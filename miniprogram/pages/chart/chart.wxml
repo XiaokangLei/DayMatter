@@ -45,17 +45,17 @@
                     <view class="detail-list" wx:for="{{resultData[payOrIncome[typeIndex].type].detail}}" wx:key="index"
                         data-ids="{{item.ids}}" bindtap="goDetail">
                         <!-- <view class="detail-list-img-box"> -->
-                            <!-- <image class="detail-list-img" src="{{item.data[0].typeData.url}}" mode="widthFix">
+                        <!-- <image class="detail-list-img" src="{{item.data[0].typeData.url}}" mode="widthFix">
                             </image> -->
-                           <!-- <text>{{item.data[0].typeData.url}}</text>  -->
-                           <!-- {{item.data[0].typeData.url}}
+                        <!-- <text>{{item.data[0].typeData.url}}</text>  -->
+                        <!-- {{item.data[0].typeData.url}}
                            <view class="cuIcon-{{item.data[0].typeData.url}} text-{{item.data[0].typeData.color}}"></view> -->
 
                         <!-- </view> -->
                         <view class="list-detail">
                             <view class="detail-list-path">
                                 <view class="detail-list-title">
-                                    {{item.data[0].typeData.text}}
+                                    {{item.data[0].typeData.text}} <text class="text-sm">{{util.percentFn(item.total,total[item.resultType])}}</text>
                                 </view>
                                 <view class="detail-list-money {{typeIndex==0?'red':'green'}}">
                                     ¥{{util.thousandthPlace(item.total) }}
@@ -65,18 +65,17 @@
                                 <view class="detail-list-percent">
                                     <view class="active-percent"
                                         style="width: {{util.percentFn(item.total,total[item.resultType])}}; background-color:{{item.bgColor}}">
-
+                                        
                                     </view>
+                                    
                                 </view>
                                 <view class="detail-list-num">
-                                    {{item.data.length}}笔
+                                     {{item.data.length}}笔
                                 </view>
                             </view>
                         </view>
                         <view class="right-arrow">
-                            <image class="right" src="../../icons/right.png" mode="widthFix">
-
-                            </image>
+                            <view class="cuIcon-right"></view>
                         </view>
                     </view>
                 </view>

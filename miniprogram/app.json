@@ -1,9 +1,8 @@
 {
   "pages": [
-    
     "pages/booking/booking",
     "pages/home/home",
-    
+    "pages/my/my",
     "pages/chart/chart",
     "pages/index/index",
     "pages/choiseEmoji/index",
@@ -11,9 +10,6 @@
     "pages/detailEvent/index",
     "pages/about/index",
     "pages/modifyEvent/index",
-    "pages/my/my",
-    
-    "pages/auth/auth",
     "pages/COVID/COVID",
     "pages/detail/detail",
     "pages/bookingLists/bookingLists"
