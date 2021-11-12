@@ -1,3 +1,9 @@
+page {
+  width: 100%;
+  height: 100%;
+  /* min-height: 100%; */
+}
+
 .red {
   color: #e4393c;
 }
@@ -6,12 +12,13 @@
 }
 .chart {
   position: fixed;
+  margin-top: 20rpx;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   font-size: 28rpx;
-  background-color: #eeeeee66;
+  /* background-color: #eeeeee66; */
   overflow-y: auto;
 }
 .chart .query-box {
@@ -20,7 +27,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f07a7a;
+  /* background-color: #f07a7a; */
   color: #555;
 }
 .chart .query-box .date-select {
@@ -50,22 +57,24 @@
 .chart .query-result .query-result-money {
   height: 126rpx;
   padding: 24rpx 0;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   display: flex;
   justify-content: space-around;
 }
 .chart .query-result .query-result-money .money-pay-box {
-  padding: 20rpx;
+  padding: 8rpx;
+  width: 30%;
+  height: 90rpx;
   border-radius: 16rpx;
   font-weight: bold;
   text-align: center;
-  color: #ccc;
+  color: rgb(158, 158, 158);
   font-size: 28rpx;
   border: 2rpx solid #cccccc;
   transition: border 0.3s;
 }
 .chart .query-result .query-result-money .money-pay-box .money-pay-money {
-  margin-top: 6rpx;
+  margin-top: 4rpx;
   transition: color 0.3s;
   color: #ccc;
 }
@@ -84,7 +93,7 @@
   color: #2E8B57;
 }
 .chart .query-result .query-result-chart-box {
-  background-color: #fff;
+  /* background-color: #fff; */
   margin: 20rpx 0;
   min-height: 600rpx;
   position: relative;
@@ -106,8 +115,8 @@
   margin-bottom: 120rpx;
 }
 .chart .query-result .query-result-detail .deteil-list-box .detail-list {
-  border-bottom: 2rpx solid #eee;
-  background-color: #fff;
+  /* border-bottom: 2rpx solid #eee; */
+  /* background-color: #fff; */
   display: flex;
   align-items: center;
   padding: 16rpx 20rpx;

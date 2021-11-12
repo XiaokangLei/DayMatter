@@ -48,16 +48,13 @@ App({
       // this.globalData.isAuth = await this.hasUserInfo();
       // 如果是2.10.4以上的基础库
       if (wx.getUserProfile) {
-
         this.globalData.isAuth = await this.hasUserInfo();
-
         if (this.isAuthCB) {
           this.isAuthCB()
         }
       } else {
         // 获取用户授权信息(旧版获取授权)
         wx.getSetting({
-
           success: res => {
             this.globalData.isAuth = res.authSetting['scope.userInfo'];
             // 添加回调函数isAuthCB(名字自定义)，有则执行

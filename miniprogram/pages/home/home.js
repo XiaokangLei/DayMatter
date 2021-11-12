@@ -29,6 +29,14 @@ Page({
 
     },
 
+    jumpPageAdd(e) {
+        console.log("e",e)
+        wx.navigateTo({
+          url: `/pages/${e.currentTarget.dataset.page}/booking`,
+          // url: `/pages/${e.currentTarget.dataset.page}/index`,
+        })
+      },
+
     // 根据日期获取记账数据
     getBooking: function() {
         // 判断用户是否授权

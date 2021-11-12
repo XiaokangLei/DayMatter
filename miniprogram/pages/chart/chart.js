@@ -332,20 +332,20 @@ Page({
         })
         this.getBooking()
     },
-    // onShow: function() {
-    //     //获取屏幕宽度
-    //     const res = wx.getSystemInfoSync();
+    onShow: function() {
+        //获取屏幕宽度
+        const res = wx.getSystemInfoSync();
 
-    //     this.setData({
-    //         canvasWidth: res.screenWidth
-    //     })
-    //     // this.setData({
-    //     //     lastDate: utils.theLastDate(),
-    //     //     searchDate: utils.theLastDate(),
-    //     //     term_index: 0,
-    //     //     date: utils.theLastDate()
-    //     // })
-    //     // this.getBooking()
-    // },
+        this.setData({
+            canvasWidth: res.screenWidth
+        })
+        this.setData({
+            lastDate: utils.theLastDate(),
+            searchDate: utils.theLastDate(),
+            term_index: 0,
+            date: utils.theLastDate()
+        })
+        this.getBooking()
+    },
 
 })

@@ -67,9 +67,9 @@
       </view>
     </view> -->
 
-    <view class='radius shadow-lg' style="min-height: 100%;">
-      <scroll-view class="pro_list" scroll-y style="min-height:100%;">
-        <view class="grid col-1 padding-sm" style="margin-bottom: 140rpx;">
+    <view class='radius shadow-lg' style="height: 1350rpx;">
+      <scroll-view class="pro_list" scroll-y style="height:100%;">
+        <view class="grid col-1 padding-sm" >
           <view class="padding-sm" wx:for="{{eventList}}" wx:key="item">
             <view class="bg-{{item.bg_color}} padding-sm radius text-center light" bindtap="jumpPageDetail"
               data-bg_color="{{item.bg_color}}" data-emoji="{{item.emoji}}" data-date="{{item.date}}"
@@ -102,10 +102,6 @@
     <view bindtap="jumpPage" data-page="addEvent" hover-class="item-hover" hover-stay-time="100">
       <button class="cu-btn round bg-gray light shadow text-xl "
         style="position: fixed;bottom: 70rpx; width: 20%; margin-left: 60%;">新增</button>
-    </view>
-    <view bindtap="jumpAboutPage" data-page="about" hover-class="item-hover" hover-stay-time="100">
-      <button class="cu-btn round shadow bg-gray light text-xl"
-        style="position: fixed;bottom: 70rpx; width: 20%; margin-left: 15%;">关于</button>
     </view>
 
   </view>

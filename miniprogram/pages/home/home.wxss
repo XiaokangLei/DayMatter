@@ -1,157 +1,32 @@
-.red {
-  color: #e4393c!important;
-}
-.green {
-  color: #2E8B57!important;
-}
 page {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
+  /* min-height: 100%; */
 }
-.home {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  /* background-color: #eeeeee66; */
-}
-.home .content-box {
-  min-height: 200rpx;
-  /* background-color: #f07a7a; */
-  padding: 60rpx;
-  box-sizing: border-box;
-  /* color: #fff9f9; */
-}
-.home .content-box .content-money {
-  margin: 16rpx 0 24rpx 0;
-  height: 70rpx;
-  font-weight: bold;
-  font-size: 40rpx;
-  display: flex;
-  /* color: #ffffffef; */
-}
-.home .content-box .content-money .content-money-int {
-  height: 70rpx;
-  line-height: 70rpx;
-  font-size: 54rpx;
-}
-.home .content-box .content-money .content-money-float {
-  height: 70rpx;
-  line-height: 82rpx;
-}
-.home .content-box .pay-income-box {
-  display: flex;
-  line-height: 60rpx;
-  justify-content: space-between;
-  /* color: #fdf9f9; */
-  margin-top: 20rpx;
-}
-.home .content-box .pay-income-box .month-income {
-  flex: 1;
-}
-.home .content-box .pay-income-box .month-income.month-right {
-  text-align: right;
-}
-.home .content-box .pay-income-box .month-income .income-money {
-  color: #a8a8a8;
-}
-.home .content-box .pay-income-box .line {
-  /* background-color: #fefefe; */
-  width: 2rpx;
-  height: 66rpx;
-  align-self: center;
-}
-.home .date-choose-box {
-  font-size: 24rpx;
-  height: 84rpx;
-  line-height: 84rpx;
-  /* background-color: #ffffff; */
+
+.date-choose-box {
+  font-size: 28rpx;
   display: flex;
   padding: 0 20rpx;
   box-sizing: border-box;
 }
-.home .date-choose-box .today-income {
-  margin: 0 14rpx;
-  color: #e4393c!important;
-}
-.home .date-choose-box .today-pay {
-  color: #2E8B57!important;
-}
-.home .date-choose-box .date-choose {
-  width: 40rpx;
-  height: 84rpx;
+
+.date-choose-box .date-choose {
   color: #555;
   margin-left: auto;
-  margin-right: 10rpx;
 }
-.home .date-choose-box .date-choose .picker {
-  height: 84rpx;
+
+.date-choose-box .date-choose .picker {
+  height: 36rpx;
   display: flex;
   align-items: center;
 }
-.home .date-choose-box .date-choose .picker .dot {
+
+.date-choose-box .date-choose .picker .dot {
   width: 8rpx;
   height: 8rpx;
   align-self: center;
   background-color: #666;
   border-radius: 50%;
   margin: 0 2rpx;
-}
-.home .data-box {
-  height: calc(100% - 390rpx - 84rpx);
-  padding: 20rpx;
-  box-sizing: border-box;
-  overflow-y: auto;
-}
-.home .data-box .data-list-box .no-data {
-  font-size: 28rpx;
-  color: #777;
-  text-align: center;
-  margin: 70rpx 0;
-}
-.home .data-box .data-list-box .data-list .data-item {
-  border-radius: 20rpx;
-  box-sizing: border-box;
-  font-size: 22rpx;
-  color: #555555;
-  min-height: 80rpx;
-  padding: 18rpx 24rpx;
-  /* background-color: #fff; */
-  display: flex;
-  align-items: center;
-  margin-bottom: 18rpx;
-}
-.home .data-box .data-list-box .data-list .data-item .item-img-box {
-  width: 64rpx;
-  height: 64rpx;
-}
-.home .data-box .data-list-box .data-list .data-item .item-img-box .item-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.home .data-box .data-list-box .data-list .data-item .item-other-box {
-  flex: 1;
-  display: flex;
-  margin-left: 26rpx;
-}
-.home .data-box .data-list-box .data-list .data-item .item-other-box .item-other-title {
-  min-width: 200rpx;
-  align-self: center;
-}
-.home .data-box .data-list-box .data-list .data-item .item-other-box .item-other-title .item-other-title-box {
-  display: flex;
-}
-.home .data-box .data-list-box .data-list .data-item .item-other-box .item-other-title .item-other-title-box .item-tab {
-  font-weight: bold;
-  margin-right: 22rpx;
-}
-.home .data-box .data-list-box .data-list .data-item .item-other-box .item-other-title .item-mes {
-  margin-top: 8rpx;
-}
-.home .data-box .data-list-box .data-list .data-item .item-other-box .money {
-  font-weight: bold;
-  align-self: center;
-  margin-left: auto;
 }

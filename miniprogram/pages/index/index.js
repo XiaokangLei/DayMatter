@@ -185,11 +185,7 @@ Page({
       // url: `/pages/${e.currentTarget.dataset.page}/index`,
     })
   },
-  jumpAboutPage(e) {
-    wx.navigateTo({
-      url: `/pages/${e.currentTarget.dataset.page}/index?openId=${app.globalData.openid}`,
-    })
-  },
+
   jumpPageDetail(e) {
     try {
       wx.setStorageSync('bg_color', e.currentTarget.dataset.bg_color)

@@ -44,10 +44,14 @@
                 <view class="deteil-list-box">
                     <view class="detail-list" wx:for="{{resultData[payOrIncome[typeIndex].type].detail}}" wx:key="index"
                         data-ids="{{item.ids}}" bindtap="goDetail">
-                        <view class="detail-list-img-box">
-                            <image class="detail-list-img" src="{{item.data[0].typeData.url}}" mode="widthFix">
-                            </image>
-                        </view>
+                        <!-- <view class="detail-list-img-box"> -->
+                            <!-- <image class="detail-list-img" src="{{item.data[0].typeData.url}}" mode="widthFix">
+                            </image> -->
+                           <!-- <text>{{item.data[0].typeData.url}}</text>  -->
+                           <!-- {{item.data[0].typeData.url}}
+                           <view class="cuIcon-{{item.data[0].typeData.url}} text-{{item.data[0].typeData.color}}"></view> -->
+
+                        <!-- </view> -->
                         <view class="list-detail">
                             <view class="detail-list-path">
                                 <view class="detail-list-title">

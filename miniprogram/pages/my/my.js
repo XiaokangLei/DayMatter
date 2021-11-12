@@ -20,6 +20,12 @@ Page({
         }
     },
 
+    jumpAboutPage(e) {
+        wx.navigateTo({
+          url: `/pages/${e.currentTarget.dataset.page}/index?openId=${app.globalData.openid}`,
+        })
+      },
+
     onShow: function () {
         //console.log("app.globalData.isAuth",app.globalData.isAuth)
         // 如果已经授权,获取用户信息

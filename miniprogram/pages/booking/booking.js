@@ -1,6 +1,8 @@
 // miniprogram/pages/booking/booking.js
 
-import { utils } from '../../js/utils.js'
+import {
+    utils
+} from '../../js/utils.js'
 
 // 获取小程序实例
 let app = getApp()
@@ -26,23 +28,28 @@ Page({
 
             {
                 text: "微信",
-                type: "wechat"
+                type: "wechat",
+                icon: "weixin"
             },
             {
                 text: "支付宝",
-                type: "alipay"
+                type: "alipay",
+                icon: "coin"
             },
             {
                 text: "信用卡",
-                type: "creditCard"
+                type: "creditCard",
+                icon: "newsfill"
             },
             {
                 text: "储蓄卡",
-                type: "desopsitCard"
+                type: "desopsitCard",
+                icon: "card"
             },
             {
                 text: "现金",
-                type: "cash"
+                type: "cash",
+                icon: "moneybagfill"
             },
         ],
 
@@ -68,18 +75,24 @@ Page({
     },
 
     // 获取类型数据
-    getTypeData: function() {
+    getTypeData: function () {
 
         wx.showLoading({
             title: '加载中...',
             mask: true
         })
 
+        let data = this.data.payOrIncomeIndex;
+        console.log("data",data)
+
         // 普通函数需要存储this才可以用this.setData
         // let _this = this;
         wx.cloud.callFunction({
             // 云函数名称
             name: 'get_typeData',
+            data: {
+                data
+            },
             // success: function(res) {
             //     _this.setData({
             //         typeData: res.result.data
@@ -100,17 +113,17 @@ Page({
                 })
             },
 
-            fail: function(err) {
+            fail: function (err) {
 
             }
         })
     },
 
     // 切换
-    toggleTab: function(e) {
+    toggleTab: function (e) {
 
         let dataset = e.currentTarget.dataset;
-
+        console.log("dataset",dataset)
         // 选择相同的选项拦截
 
         if (this.data.chooseType == dataset.type && dataset.index == this.data[dataset.type]) {
@@ -118,10 +131,12 @@ Page({
         }
 
         if (dataset.type == "payOrIncomeIndex" && this.data.payOrIncomeIndex != dataset.index) {
+            console.log("payOrIncomeIndex",this.data.payOrIncomeIndex)
             this.setData({
                 IsRotate: !this.data.IsRotate,
                 typeDataIndex: -1
             });
+            
         }
         this.setData({
             [dataset.type]: dataset.index,
@@ -131,7 +146,7 @@ Page({
     },
 
     // 记账信息
-    detailChange: function(e) {
+    detailChange: function (e) {
         let detailData = this.data.detailData;
         detailData[e.currentTarget.dataset.key] = e.detail.value;
         this.setData({
@@ -140,7 +155,7 @@ Page({
     },
 
     // 保存按钮
-    saveData: function() {
+    saveData: function () {
         // 判断用户是否授权
         if (!app.globalData.isAuth) {
             wx.showModal({
@@ -221,7 +236,9 @@ Page({
         let daArr = ['payOrIncome', 'typeData', 'pathData'];
         let obj = {};
         daArr.forEach(v => {
+            console.log("v",v)
             obj[v] = this.data[v][this.data[v + 'Index']];
+            console.log("obj[v]",obj[v])
             obj[v + 'type'] = obj[v].type;
         })
         obj.detailData = Object.assign({}, this.data.detailData);
@@ -231,7 +248,7 @@ Page({
     },
 
     // 写入数据库
-    addBooking: function(data) {
+    addBooking: function (data) {
         wx.showLoading({
             title: '记录中...',
             mask: true
@@ -250,13 +267,13 @@ Page({
                 this.emptyData()
             },
 
-            fail: function(err) {
+            fail: function (err) {
 
             }
         })
     },
     // 清空数据
-    emptyData: function() {
+    emptyData: function () {
         this.setData({
             chooseType: '',
             payOrIncomeIndex: 0,
@@ -268,12 +285,13 @@ Page({
                 message: ""
             }
         });
+        wx.navigateBack()
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function() {
+    onShow: function () {
         this.getTypeData();
         this.setData({
             lastDate: utils.theLastDate()
