@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/booking/booking",
     "pages/home/home",
     "pages/my/my",
     "pages/chart/chart",
-    "pages/index/index",
+    
     "pages/choiseEmoji/index",
     "pages/addEvent/index",
     "pages/detailEvent/index",
@@ -30,29 +31,19 @@
     "backgroundColor": "@bgColor",
     "color": "#BFC2C9",
     "selectedColor": "#f37a7a",
-    "list": [{
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "./images/createtask_o.png",
-        "selectedIconPath": "./images/createtask.png"
-      },
+    "list": [
       {
         "pagePath": "pages/home/home",
         "text": "账本",
         "iconPath": "./images/booking_o.png",
         "selectedIconPath": "./images/booking.png"
       },
+ 
       {
-        "pagePath": "pages/booking/booking",
-        "text": "记账",
-        "iconPath": "./images/addition_o.png",
-        "selectedIconPath": "./images/addition.png"
-      },
-      {
-        "pagePath": "pages/chart/chart",
-        "text": "统计",
-        "iconPath": "./images/chart_o.png",
-        "selectedIconPath": "./images/chart.png"
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/createtask_o.png",
+        "selectedIconPath": "./images/createtask.png"
       },
       {
         "pagePath": "pages/my/my",

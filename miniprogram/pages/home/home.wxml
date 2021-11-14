@@ -26,10 +26,12 @@
                                         </view>
                                     </view>
                                     <view class="flex-sub margin-xs radius text-center">
+
                                     </view>
 
-                                    <view class="flex-sub margin-xs radius text-center">
-
+                                    <view class="flex-sub margin-xs radius text-center text-xl">
+                                        <view bindtap="jumpPageAdd" data-page="chart" hover-class="item-hover" hover-stay-time="100">统计 <text class="cuIcon-rankfill"></text></view>
+                                            
                                     </view>
                                 </view>
                             </view>
@@ -116,6 +118,12 @@
 
             </view>
         </scroll-view>
+    </view>
+
+    <view bindtap="jumpPageAdd" data-page="booking" hover-class="item-hover" hover-stay-time="100">
+        <view class="cu-btn round bg-red light shadow text-sl text-center"
+            style="position: fixed;bottom: 60rpx; width: 9%; margin-left: 81%;"><text class="cuIcon-roundadd"></text>
+        </view>
     </view>
 
 </view>

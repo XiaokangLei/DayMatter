@@ -1,10 +1,8 @@
 <view class="container_index padding">
-    <view class="UCenter-bg bg-gradual-blue radius">
+    <view class="UCenter-bg radius">
         <view class="cu-avatar round xl" style="background-image:url({{userInfo.avatarUrl}});"></view>
-        <view class="text-xl">{{userInfo.nickName}}
+        <view class="text-xl text-gray">{{userInfo.nickName}}
         </view>
-        <image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill"
-            class="gif-wave"></image>
     </view>
     
     <view class="my">

@@ -9,6 +9,13 @@ Page({
   data: {
     emojiNum: 1,
     iconList: [{
+        emoji: '❤️'
+      }, {
+        emoji: '✨'
+      }, {
+        emoji: '😗'
+      },
+      {
         emoji: '😀'
       }, {
         emoji: '😄'
@@ -32,7 +39,7 @@ Page({
         emoji: '😋'
       }, {
         emoji: '😛'
-      },{
+      }, {
         emoji: '😜'
       }, {
         emoji: '😝'
@@ -56,7 +63,7 @@ Page({
         emoji: '😰'
       }, {
         emoji: '😓'
-      },{
+      }, {
         emoji: '😩'
       }, {
         emoji: '😤'
@@ -80,7 +87,7 @@ Page({
         emoji: '👈'
       }, {
         emoji: '👉'
-      },{
+      }, {
         emoji: '🤙'
       }, {
         emoji: '🙏'
@@ -104,7 +111,7 @@ Page({
         emoji: '👨‍🦳'
       }, {
         emoji: '🙍'
-      },{
+      }, {
         emoji: '🙅'
       }, {
         emoji: '💁'

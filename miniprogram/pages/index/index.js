@@ -103,7 +103,8 @@ Page({
     openId: "",
     eventList: [],
     page: 1,
-    isFrash: true
+    isFrash: true,
+    CustomBar:app.globalData.CustomBar
   },
 
   /**

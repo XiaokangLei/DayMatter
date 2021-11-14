@@ -32,8 +32,7 @@ Page({
     jumpPageAdd(e) {
         console.log("e",e)
         wx.navigateTo({
-          url: `/pages/${e.currentTarget.dataset.page}/booking`,
-          // url: `/pages/${e.currentTarget.dataset.page}/index`,
+          url: `/pages/${e.currentTarget.dataset.page}/${e.currentTarget.dataset.page}`,
         })
       },
 
