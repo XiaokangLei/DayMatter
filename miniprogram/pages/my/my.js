@@ -27,6 +27,7 @@ Page({
     },
 
     onShow: function () {
+        wx.setStorageSync('isFrash', false)
         //console.log("app.globalData.isAuth",app.globalData.isAuth)
         // 如果已经授权,获取用户信息
         if (app.globalData.isAuth) {

@@ -45,7 +45,6 @@ App({
 
       }
       this.updateManager();
-      // this.globalData.isAuth = await this.hasUserInfo();
       // 如果是2.10.4以上的基础库
       if (wx.getUserProfile) {
         this.globalData.isAuth = await this.hasUserInfo();

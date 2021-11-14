@@ -185,6 +185,7 @@ Page({
         }
     },
     onShow: function() {
+        wx.setStorageSync('isFrash', false)
         this.setData({
             lastDate: utils.theLastDate(),
             searchDate: utils.theLastDate(),

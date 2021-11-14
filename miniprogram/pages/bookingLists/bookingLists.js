@@ -41,7 +41,7 @@ Page({
                     // //console.log(res.result.data)
                     // 改变标题
                 wx.setNavigationBarTitle({
-                    title: "朕的记账生涯(近" + this.data.bookingData.length + "条数据)"
+                    title: "记账生涯(近" + this.data.bookingData.length + "条数据)"
                 })
             },
             fail: function(err) {
@@ -82,7 +82,7 @@ Page({
                                         })
                                         // 改变标题
                                     wx.setNavigationBarTitle({
-                                        title: "朕的记账生涯(近" + this.data.bookingData.length + "条数据)"
+                                        title: "记账生涯(近" + this.data.bookingData.length + "条数据)"
                                     })
                                 }
                             },
