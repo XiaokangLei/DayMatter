@@ -73,10 +73,12 @@
       </scroll-view>
     </view>
 
-    <view bindtap="jumpPage" data-page="addEvent" hover-class="item-hover" hover-stay-time="100">
-      <view class="cu-btn round bg-orange light shadow text-sl text-center"
-        style="position: fixed;bottom: 60rpx; width: 9%; margin-left: 81%;"><text class="cuIcon-roundadd"></text></view>
+    <!-- 创建按钮 -->
+    <view class="create text-center text-xxxl" bind:tap="jumpPage" data-page="addEvent" hover-class="item-hover"
+      hover-stay-time="100">
+      <text class="cuIcon-add text-white "></text>
     </view>
+
 
   </view>
 

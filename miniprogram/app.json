@@ -5,7 +5,6 @@
     "pages/home/home",
     "pages/my/my",
     "pages/chart/chart",
-    
     "pages/choiseEmoji/index",
     "pages/addEvent/index",
     "pages/detailEvent/index",
@@ -13,7 +12,11 @@
     "pages/modifyEvent/index",
     "pages/COVID/COVID",
     "pages/detail/detail",
-    "pages/bookingLists/bookingLists"
+    "pages/bookingLists/bookingLists",
+    "pages/goal/index",
+    "pages/summary/index",
+    "pages/timer/index",
+    "pages/detail_goal/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "@navBgColor",
@@ -33,17 +36,22 @@
     "selectedColor": "#f37a7a",
     "list": [
       {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/home_o.png",
+        "selectedIconPath": "./images/home.png"
+      },
+      {
         "pagePath": "pages/home/home",
         "text": "账本",
         "iconPath": "./images/booking_o.png",
         "selectedIconPath": "./images/booking.png"
       },
- 
       {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "./images/createtask_o.png",
-        "selectedIconPath": "./images/createtask.png"
+        "pagePath": "pages/goal/index",
+        "text": "专注",
+        "iconPath": "./images/booking_o.png",
+        "selectedIconPath": "./images/booking.png"
       },
       {
         "pagePath": "pages/my/my",

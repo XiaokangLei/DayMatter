@@ -30,3 +30,17 @@ page {
   border-radius: 50%;
   margin: 0 2rpx;
 }
+/* 创建按钮 */
+.create {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  margin: 32px;
+  padding: 20rpx;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #e97d3f;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3rpx 20rpx;
+}
