@@ -81,10 +81,6 @@ page {
   overflow: hidden;
 }
 
-.booking .content .type-list .types.rotate {
-  transform: rotate(360deg);
-}
-
 .booking .content .type-list .types .type {
   /* flex: 1; */
   width: 20%;

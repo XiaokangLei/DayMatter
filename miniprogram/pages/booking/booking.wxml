@@ -7,12 +7,12 @@
                 <view class="choose">
                     <view class="pay-or-income">
                         <view class="income  {{payOrIncomeIndex==index?'IsChoose':''}}" wx:for="{{payOrIncome}}"
-                            wx:key="index" bindtap="toggleTab" data-index="{{index}}" data-type="payOrIncomeIndex">
+                            wx:key="index" bindtap="toggleTab_top" data-index="{{index}}" data-type="payOrIncomeIndex">
                             {{item.text}}
                         </view>
                     </view>
                 </view>
-                <view class="types {{IsRotate?'rotate':''}}">
+                <view class="types">
                     <view class="type {{typeDataIndex==index?'typeChooseNow':''}}" wx:for="{{typeData}}" wx:key="index"
                         bindtap="toggleTab" data-index="{{index}}" data-type="typeDataIndex">
                         <view class="type-img text-xxxl">

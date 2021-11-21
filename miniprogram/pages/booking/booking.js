@@ -22,6 +22,7 @@ Page({
 
         // 消费种类数据
         typeData: [],
+        typeData_all: [],
 
         // 消费路径
         pathData: [
@@ -66,9 +67,6 @@ Page({
         typeDataIndex: -1,
         pathDataIndex: 0,
 
-        // 是否引用切换动画
-        IsRotate: false,
-
         // 最大可选时间
         lastDate: ''
 
@@ -83,7 +81,7 @@ Page({
         })
 
         let data = this.data.payOrIncomeIndex;
-        console.log("data",data)
+        console.log("data", data)
 
         // 普通函数需要存储this才可以用this.setData
         // let _this = this;
@@ -104,8 +102,16 @@ Page({
             success: res => {
                 // 箭头函数不存在this作用域问题,所以可以用this
                 // 
+                // for(){}
+                let tmp = []
+                res.result.data.forEach(v => {
+                    if (!v.index) {
+                        tmp = tmp.concat(v)
+                    }
+                })
                 this.setData({
-                    typeData: res.result.data
+                    typeData_all: res.result.data,
+                    typeData: tmp
                 }, (res) => {
                     wx.hideLoading();
                     // 读取 typeData 数据 需要加多个data ,this.data.typeData
@@ -120,23 +126,67 @@ Page({
     },
 
     // 切换
+    toggleTab_top: function (e) {
+
+        let dataset = e.currentTarget.dataset;
+        console.log("dataset", dataset)
+        console.log(this.data.typeData)
+        // 选择相同的选项拦截
+
+        let tmp = []
+        console.log("index:", dataset.index)
+        if (dataset.index == 1) {
+            this.data.typeData_all.forEach(v => {
+                if (v.index) {
+                    tmp = tmp.concat(v)
+                }
+            })
+        } else {
+            this.data.typeData_all.forEach(v => {
+                if (!v.index) {
+                    tmp = tmp.concat(v)
+                }
+            })
+        }
+        this.setData({
+            typeData: tmp
+        })
+        if (this.data.chooseType == dataset.type && dataset.index == this.data[dataset.type]) {
+            return;
+        }
+        if (dataset.type == "payOrIncomeIndex" && this.data.payOrIncomeIndex != dataset.index) {
+            console.log("payOrIncomeIndex", this.data.payOrIncomeIndex)
+            this.setData({
+                typeDataIndex: -1
+            });
+
+        }
+        this.setData({
+            [dataset.type]: dataset.index,
+            chooseType: dataset.type
+        });
+
+    },
+
+    // 切换
     toggleTab: function (e) {
 
         let dataset = e.currentTarget.dataset;
-        console.log("dataset",dataset)
+        console.log("dataset", dataset)
         // 选择相同的选项拦截
 
+        console.log("chooseType:",this.data.chooseType,dataset.type)
+        console.log("chooseType:",dataset.index,this.data[dataset.type])
         if (this.data.chooseType == dataset.type && dataset.index == this.data[dataset.type]) {
             return;
         }
 
         if (dataset.type == "payOrIncomeIndex" && this.data.payOrIncomeIndex != dataset.index) {
-            console.log("payOrIncomeIndex",this.data.payOrIncomeIndex)
+            console.log("payOrIncomeIndex", this.data.payOrIncomeIndex)
             this.setData({
-                IsRotate: !this.data.IsRotate,
                 typeDataIndex: -1
             });
-            
+
         }
         this.setData({
             [dataset.type]: dataset.index,
@@ -153,7 +203,7 @@ Page({
             detailData
         })
     },
-    
+
 
 
     // 保存按钮
@@ -168,25 +218,25 @@ Page({
                         //保存userInfo到DB
                         wx.getUserProfile({
                             desc: '用于数据展示',
-                            success(res){
-                                console.log("授权",res)
+                            success(res) {
+                                console.log("授权", res)
                                 let data = res.userInfo;
-                                if(!data) return
+                                if (!data) return
                                 app.globalData.userInfo = data;
                                 app.globalData.isAuth = true;
                                 wx.cloud.callFunction({
                                     // 云函数名称
                                     name: 'set_user',
-                                    data, 
+                                    data,
                                     success: res => {
-                                       //console.log("成功",res)
+                                        //console.log("成功",res)
                                     },
-                                    fail: function(err) {
+                                    fail: function (err) {
                                         //console.log(err)
                                         // app.globalData.isAuth = false;
                                     }
                                 })
-                            } 
+                            }
                         })
                     } else if (res.cancel) {
                         // 
@@ -258,9 +308,9 @@ Page({
         let daArr = ['payOrIncome', 'typeData', 'pathData'];
         let obj = {};
         daArr.forEach(v => {
-            console.log("v",v)
+            console.log("v", v)
             obj[v] = this.data[v][this.data[v + 'Index']];
-            console.log("obj[v]",obj[v])
+            console.log("obj[v]", obj[v])
             obj[v + 'type'] = obj[v].type;
         })
         obj.detailData = Object.assign({}, this.data.detailData);

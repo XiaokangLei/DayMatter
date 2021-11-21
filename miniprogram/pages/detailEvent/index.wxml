@@ -1,19 +1,19 @@
 <!--pages/detailEvent/index.wxml-->
 <view class="container_index">
   <view class="grid col-1 padding" style="margin-bottom: 160rpx; height: 1500rpx; margin-top: 20rpx;">
-    <view class="padding">
-      <view class="bg-{{bg_color}} padding-sm radius text-center light" style="height: 1120rpx; ">
+    <view class="padding-lg">
+      <view class="bg-{{bg_color}} padding-sm radius-l text-center light shadow-warp" style="height: 1000rpx; ">
         <view class="padding-sm justify-between">
-          <view class="padding-xs radius text-xsl">{{emoji}}
+          <view class="padding-xs radius-l text-xsl">{{emoji}}
           </view>
           <view>
-            <view class="padding-xs radius text-center">
+            <view class="padding-xs radius-l text-center">
               <text>{{date}}{{weather}}</text>
             </view>
-            <view class="padding-xs radius text-xxl text-cut" style="margin-top: 80rpx;">
+            <view class="padding-xs radius-l text-xxl text-cut" style="margin-top: 80rpx;">
               <text class="text-cut">{{title}}</text>
             </view>
-            <view class="padding-xs radius text-cut" style="margin-top: 120rpx;">
+            <view class="padding-xs radius-l text-cut" style="margin-top: 100rpx;">
               <text wx:if="{{m2.format(date)[0]}}" class="text-xl">还有</text>
               <text wx:else class="text-bold text-xl">已经</text>
               <text class="text-xxsl text-blod"> {{m2.format(date)[1]}} </text>
@@ -35,7 +35,7 @@
               <text class="cuIcon-close text-red"></text>
             </view>
           </view>
-          <view class="padding-xl text-grey">
+          <view class="padding-xl bg-white text-grey">
             确定删除【{{title}}】吗？
           </view>
           <view class="cu-bar bg-white">
