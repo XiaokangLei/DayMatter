@@ -7,7 +7,7 @@ page {
   height: 100rpx;    
   line-height :100rpx;     
   margin-left: 25%;   
-  bottom: 140rpx;   
+  bottom: 100rpx;   
   font-size: large;      
   position: fixed;    
   width: 50%; 

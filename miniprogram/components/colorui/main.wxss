@@ -3888,6 +3888,10 @@ scroll-view.cu-steps .cu-item {
 	font-size: 64rpx;
 }
 
+.text-emoji {
+	font-size: 70rpx;
+}
+
 .text-sl {
 	font-size: 80rpx;
 }

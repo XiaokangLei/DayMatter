@@ -1,13 +1,13 @@
 <!--pages/choiseEmoji/index.wxml-->
 <view class="container_index">
   <view class="padding-sm text-center">
-    <view class="cu-avatar xl round margin-left bg-white">{{emoji}}</view>
+    <view class="text-emoji">{{emoji}}</view>
   </view>
   
-  <view class='margin bg-white padding radius shadow-lg' style="max-height: 1000rpx;">
-    <scroll-view class="pro_list" scroll-y style="height: 860rpx;">
+  <view class='margin bg-white padding-sm radius shadow-lg' style="max-height: 1100rpx;">
+    <scroll-view class="pro_list" scroll-y style="height: 1000rpx;">
       <view class="cu-list grid col-5 no-border">
-        <view class="cu-item text-xxxl " wx:for="{{iconList}}" wx:key="value" bindtap="emojiChange"
+        <view class="cu-item text-emoji " wx:for="{{iconList}}" wx:key="value" bindtap="emojiChange"
           data-value="{{item.emoji}}">
           <view>{{item.emoji}}</view>
         </view>

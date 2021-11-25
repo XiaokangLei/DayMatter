@@ -24,7 +24,7 @@
       </view>
       <view bindtap="showModal" data-target="DialogModal2" hover-class="item-hover" hover-stay-time="100">
         <button class="cu-btn round bg-gray light shadow text-xl "
-          style="position: fixed;bottom: 10%; width: 20%; margin-left: 50%;">删除</button>
+          style="position: fixed;bottom: 10%; width: 20%; margin-left: 15%;">删除</button>
       </view>
 
       <view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
@@ -48,7 +48,7 @@
 
       <view bindtap="modifyPage" data-page="modifyEvent" hover-class="item-hover" hover-stay-time="100">
         <button class="cu-btn round shadow bg-gray light text-xl"
-          style="position: fixed;bottom: 10%; width: 20%; margin-left: 15%;">修改</button>
+          style="position: fixed;bottom: 10%; width: 20%; margin-left: 50%;">修改</button>
       </view>
     </view>
   </view>

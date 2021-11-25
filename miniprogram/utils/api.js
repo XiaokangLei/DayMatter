@@ -18,8 +18,8 @@ function getEventDetailList(page, openId) {
       openId: openId
     })
     .orderBy('_createTime', 'asc')
-    .skip((page - 1) * 20)
-    .limit(20)
+    .skip((page - 1) * 5)
+    .limit(5)
     .get()
 }
 
