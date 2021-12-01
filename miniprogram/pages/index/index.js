@@ -104,7 +104,8 @@ Page({
     eventList: [],
     page: 1,
     isFrash: true,
-    CustomBar:app.globalData.CustomBar
+    CustomBar: app.globalData.CustomBar,
+    noData: false
   },
 
   /**
@@ -165,11 +166,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: async function () {
-    console.info("==-=-=--=-=-=-=-=-=-=-=-=-===")
-    // this.setData({
-    //   page: this.data.page + 1
-    // })
-    this.checkUser()
+    // 存在数据会触发更新函数
+    if (!this.data.noData) {
+      this.checkUser()
+    }
 
   },
 
@@ -232,7 +232,13 @@ Page({
           that.setData({
             page: page + 1,
             eventList: that.data.eventList.concat(result.data),
-            event_length: 0
+            event_length: 0,
+            noData: false
+          })
+        } else if (result.data.length == 0) {
+          console.log("noData!")
+          that.setData({
+            noData: true
           })
         }
       }

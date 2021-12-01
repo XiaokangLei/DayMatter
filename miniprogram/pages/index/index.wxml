@@ -41,11 +41,11 @@
   </view>
   <!-- 直接显示事件 -->
   <view wx:else>
-    <view class='radius-l' style="height: 100%;">
-      <!-- <scroll-view class="pro_list" scroll-y style="height:100%;"> -->
+    <!-- <view class='radius-l' style="height: 100%;"> -->
+      <scroll-view class="pro_list" scroll-y style="min-height:100vh;">
         <view class="grid col-1 padding-sm">
           <view class="padding-sm" wx:for="{{eventList}}" wx:key="item">
-            <view class="bg-{{item.bg_color}} padding-sm radius-l text-center light shadow-blur" bindtap="jumpPageDetail"
+            <view class="bg-{{item.bg_color}} padding-sm radius-l text-center light shadow-warp" bindtap="jumpPageDetail"
               data-bg_color="{{item.bg_color}}" data-emoji="{{item.emoji}}" data-date="{{item.date}}"
               data-weather="{{item.weather}}" data-title="{{item.title}}" data-_id="{{item._id}}"
               data-page="detailEvent" hover-class="item-hover" hover-stay-time="100">
@@ -70,8 +70,8 @@
             </view>
           </view>
         </view>
-      <!-- </scroll-view> -->
-    </view>
+      </scroll-view>
+    <!-- </view> -->
 
     <!-- 创建按钮 -->
     <view class="create text-center text-xxxl" bind:tap="jumpPage" data-page="addEvent" hover-class="item-hover"
@@ -79,7 +79,9 @@
       <text class="cuIcon-add text-white "></text>
     </view>
 
-
+  </view>
+  <view class="text-center padding-xl" wx:if="{{noData}}">
+  <text>-- 没有更多数据啦 --</text>
   </view>
 
 </view>
