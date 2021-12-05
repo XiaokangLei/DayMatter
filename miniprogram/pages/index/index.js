@@ -11,7 +11,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    event_length: 1,
+    // 数据库中是否存在事件信息 标志变量
+    event_length: 0,
     showUploadTip: false,
     ColorList: [{
         title: '嫣红',
@@ -222,11 +223,11 @@ Page({
       console.log(userInfo.data)
       if (userInfo.data.length > 0) {
         let result = await api.getEventDetailList(page, this.data.openId)
-        console.log("999999999999999999999")
         console.log(result)
         if (result.data.length === 0 && page === 1) {
           that.setData({
-            event_length: 1
+            event_length: 1,
+            noData: true
           })
         } else if (result.data.length > 0) {
           that.setData({

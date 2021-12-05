@@ -1,91 +1,111 @@
 <!--pages/indexTest/index.wxml-->
 <view class="container_index">
+
+  <!-- <view class="bg-group">
+    <view class="poster-bg"
+      style="background-image:url('https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3000107020,2519435186&fm=26&gp=0.jpg');">
+    </view>
+    <view class="image-wrap">
+      <image src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3000107020,2519435186&fm=26&gp=0.jpg"
+        mode="aspectFill" class="img" />
+    </view>
+  </view> -->
+  <!-- 若数据库中不存在事件信息，显示新增画面 -->
   <view wx:if="{{event_length}}">
-    <view class="padding-sm flex">
-      <view class="flex-sub padding-sm margin-xs radius-l text-xsl" style="padding-top: -60rpx;padding-left: 60rpx;">🎃
-      </view>
-      <view class="flex-sub padding-sm margin-xs radius-l text-xsl text-right" style="padding-top: 100rpx;">💦</view>
-    </view>
-
-    <view class="padding-sm">
-      <view class="flex p-xs margin-bottom-sm mb-sm">
-        <view class="flex-sub  padding-sm margin-xs radius-l text-xxl">💕</view>
-        <view class="flex-twice  padding-sm margin-xs radius-l">
-          <view class="padding-sm text-sl text-center">DayMatter</view>
-          <view class="padding-sm text-xl text-center">记录重要的那天</view>
+    <view style="min-height:100vh">
+      <view class="padding-sm flex">
+        <view class="flex-sub padding-sm margin-xs radius-l text-xsl" style="padding-top: -60rpx;padding-left: 60rpx;">
+          🎃
         </view>
-        <view class="flex-sub  padding-sm margin-xs radius-l text-xxxl" style="padding-top: 120rpx;">💕</view>
+        <view class="flex-sub padding-sm margin-xs radius-l text-xsl text-right" style="padding-top: 100rpx;">💦</view>
       </view>
-    </view>
 
-    <view class="padding-sm flex">
-      <view class="flex-sub padding-sm margin-xs radius-l text-xsl text-right" style="padding-top: 100rpx;">✨</view>
-      <view class="flex-sub padding-sm margin-xs radius-l text-xsl" style="padding-top: -40rpx;padding-left: 60rpx;">🪐
+      <view class="padding-sm">
+        <view class="flex p-xs margin-bottom-sm mb-sm">
+          <view class="flex-sub  padding-sm margin-xs radius-l text-xxl">💕</view>
+          <view class="flex-twice  padding-sm margin-xs radius-l">
+            <view class="padding-sm text-sl text-center">DayMatter</view>
+            <view class="padding-sm text-xl text-center">记录重要的那天</view>
+          </view>
+          <view class="flex-sub  padding-sm margin-xs radius-l text-xxxl" style="padding-top: 120rpx;">💕</view>
+        </view>
       </view>
-    </view>
-    <view class="padding-sm flex">
-      <view class="flex-sub padding-sm margin-xs radius-l text-xsl" style="padding-top: 140rpx;">🍂</view>
-      <view class="flex-sub padding-sm margin-xs radius-l text-xsl text-right">☕</view>
-    </view>
-    <view class="padding-sm flex">
+
+      <view class="padding-sm flex">
+        <view class="flex-sub padding-sm margin-xs radius-l text-xsl text-right" style="padding-top: 100rpx;">✨</view>
+        <view class="flex-sub padding-sm margin-xs radius-l text-xsl" style="padding-top: -40rpx;padding-left: 60rpx;">
+          🪐
+        </view>
+      </view>
+      <view class="padding-sm flex">
+        <view class="flex-sub padding-sm margin-xs radius-l text-xsl" style="padding-top: 140rpx;">🍂</view>
+        <view class="flex-sub padding-sm margin-xs radius-l text-xsl text-right">☕</view>
+      </view>
+      <!-- <view class="padding-sm flex">
       <view class="flex-sub padding-sm margin-xs radius-l text-xsl"></view>
       <view class="flex-twice padding-sm margin-xs radius-l text-xsl">🥮</view>
       <view class="flex-treble padding-sm margin-xs radius-l text-xsl"></view>
-    </view>
+    </view> -->
 
-    <view class="button_type bg-orange" bindtap="jumpPage" data-page="addEvent" hover-class="item-hover"
-      hover-stay-time="100">
-      <text class="margin-tb-sm text-xxl">添加倒数日 💡</text>
+      <view class="button_type bg-orange" bindtap="jumpPage" data-page="addEvent" hover-class="item-hover"
+        hover-stay-time="100">
+        <text class="margin-tb-sm text-xxl">添加倒数日 💡</text>
+      </view>
     </view>
-
   </view>
-  <!-- 直接显示事件 -->
+  <!-- 若数据库中存在事件信息，直接显示事件 -->
   <view wx:else>
-    <!-- <view class='radius-l' style="height: 100%;"> -->
-      <scroll-view class="pro_list" scroll-y style="min-height:100vh;">
-        <view class="grid col-1 padding-sm">
-          <view class="padding-sm" wx:for="{{eventList}}" wx:key="item">
-            <view class="bg-{{item.bg_color}} padding-sm radius-l text-center light shadow-warp" bindtap="jumpPageDetail"
-              data-bg_color="{{item.bg_color}}" data-emoji="{{item.emoji}}" data-date="{{item.date}}"
-              data-weather="{{item.weather}}" data-title="{{item.title}}" data-_id="{{item._id}}"
-              data-page="detailEvent" hover-class="item-hover" hover-stay-time="100">
-              <view class="flex padding-sm justify-between">
-                <view class="padding-xs radius-l text-xsl">{{item.emoji}}
+    <!-- 事件列表放置在滚动组件中 -->
+    <scroll-view class="pro_list" scroll-y style="min-height:100vh;">
+      <view class="grid col-1 padding-sm">
+        <view class="padding-sm" wx:for="{{eventList}}" wx:key="item">
+
+          <!-- <view class="bg-{{item.bg_color}} padding-sm radius-xl text-center light shadow-warp" bindtap="jumpPageDetail"
+            data-bg_color="{{item.bg_color}}" data-emoji="{{item.emoji}}" data-date="{{item.date}}"
+            data-weather="{{item.weather}}" data-title="{{item.title}}" data-_id="{{item._id}}" data-page="detailEvent"
+            hover-class="item-hover" hover-stay-time="100"
+            > -->
+            <view class="bg-{{item.bg_color}} padding-sm radius-xl text-center light shadow-warp" bindtap="jumpPageDetail"
+            data-bg_color="{{item.bg_color}}" data-emoji="{{item.emoji}}" data-date="{{item.date}}"
+            data-weather="{{item.weather}}" data-title="{{item.title}}" data-_id="{{item._id}}" data-page="detailEvent"
+            hover-class="item-hover" hover-stay-time="100"
+            >
+            <!-- <view class="poster-bg"
+      style="background-image:url('https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3000107020,2519435186&fm=26&gp=0.jpg');">
+    </view> -->
+            <view class="flex padding-sm justify-between">
+              <view class="padding-xs radius-l text-xsl">{{item.emoji}}
+              </view>
+              <view>
+                <view class="padding-xs radius-l text-right " style="margin-top: -20rpx;">
+                  <text>{{item.date}}{{item.weather}}</text>
                 </view>
-                <view>
-                  <view class="padding-xs radius-l text-right " style="margin-top: -20rpx;">
-                    <text>{{item.date}}{{item.weather}}</text>
-                  </view>
-                  <view class="padding-xs radius-l text-xxl text-right text-cut">
-                    <text class="text-cut">{{item.title}}</text>
-                  </view>
-                  <view class="padding-xs radius-l text-right text-cut" style="margin-bottom: -20rpx;">
-                    <text wx:if="{{m2.format(item.date)[0]}}" class="text-xl">还有</text>
-                    <text wx:else class="text-bold text-xl">已经</text>
-                    <text class="text-ssl"> {{m2.format(item.date)[1]}} </text>
-                    <text class="text-xl">天</text>
-                  </view>
+                <view class="padding-xs radius-l text-xxl text-right text-cut">
+                  <text class="text-cut">{{item.title}}</text>
+                </view>
+                <view class="padding-xs radius-l text-right text-cut" style="margin-bottom: -20rpx;">
+                  <text wx:if="{{m2.format(item.date)[0]}}" class="text-xl">还有</text>
+                  <text wx:else class="text-bold text-xl">已经</text>
+                  <text class="text-ssl"> {{m2.format(item.date)[1]}} </text>
+                  <text class="text-xl">天</text>
                 </view>
               </view>
             </view>
           </view>
         </view>
-      </scroll-view>
-    <!-- </view> -->
-
-    <!-- 创建按钮 -->
+      </view>
+    </scroll-view>
+    <!-- 新增悬浮固定按钮 -->
     <view class="create text-center text-xxxl" bind:tap="jumpPage" data-page="addEvent" hover-class="item-hover"
       hover-stay-time="100">
       <text class="cuIcon-add text-white "></text>
     </view>
-
+    <!-- 底部提示 -->
+    <view class="text-center solid-bottom text-sm padding" wx:if="{{noData}}">
+        <text class="text-grey"> 没有更多数据啦 </text>
+      </view>
   </view>
-  <view class="text-center padding-xl" wx:if="{{noData}}">
-  <text>-- 没有更多数据啦 --</text>
-  </view>
-
 </view>
-
 
 <wxs module="m1">
   function format(ts) {

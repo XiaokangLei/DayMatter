@@ -51,6 +51,14 @@ Page({
         name: 'pink',
         value: 'pink'
       },
+      {
+        name: 'blue',
+        value: 'gradual-blue-test'
+      },
+      {
+        name: 'pink',
+        value: 'gradual-pink-test'
+      },
     ],
 
   },

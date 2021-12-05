@@ -32,32 +32,32 @@
   },
   "tabBar": {
     "backgroundColor": "@bgColor",
-    "color": "#BFC2C9",
-    "selectedColor": "#f37a7a",
+    "color": "#707070",
+    "selectedColor": "#0368D9",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "./images/home_o.png",
-        "selectedIconPath": "./images/home.png"
+        "text": "倒数日",
+        "iconPath": "./images/history.png",
+        "selectedIconPath": "./images/history-filling.png"
       },
       {
         "pagePath": "pages/home/home",
-        "text": "账本",
-        "iconPath": "./images/booking_o.png",
-        "selectedIconPath": "./images/booking.png"
+        "text": "记账",
+        "iconPath": "./images/edit.png",
+        "selectedIconPath": "./images/edit-filling.png"
       },
       {
         "pagePath": "pages/goal/index",
         "text": "专注",
-        "iconPath": "./images/booking_o.png",
-        "selectedIconPath": "./images/booking.png"
+        "iconPath": "./images/layout.png",
+        "selectedIconPath": "./images/layout-filling.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath": "./images/my_o.png",
-        "selectedIconPath": "./images/my.png"
+        "iconPath": "./images/user.png",
+        "selectedIconPath": "./images/user-filling.png"
       }
     ]
   },

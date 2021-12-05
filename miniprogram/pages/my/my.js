@@ -11,9 +11,6 @@ Page({
     data: {
         userInfo: {
             avatarUrl: "",
-            city: "",
-            country: "",
-            gender: 0,
             language: "zh_CN",
             nickName: "未授权",
             province: "",
@@ -48,9 +45,6 @@ Page({
                         let userInfo = {
                             nickName: res.userInfo.nickName,
                             avatarUrl: res.userInfo.avatarUrl,
-                            city: res.userInfo.city || "",
-                            country: res.userInfo.country || "",
-                            gender: res.userInfo.gender || "",
                             language: res.userInfo.language || "",
                             province: res.userInfo.province || "",
                         }

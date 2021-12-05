@@ -43,6 +43,7 @@ page {
   font-size: 28rpx;
   padding-right: 20rpx;
   padding-left: 30rpx;
+  padding-top: 20rpx;
 }
 .my .toool-list .list .right-arrow {
   margin-left: auto;

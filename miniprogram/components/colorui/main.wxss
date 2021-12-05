@@ -50,7 +50,13 @@ page {
 	--gradualPurple: linear-gradient(45deg, #9000ff, #5e00ff);
 	--gradualPink: linear-gradient(45deg, #ec008c, #6739b6);
 	--gradualBlue: linear-gradient(45deg, #0081ff, #1cbbb4);
-	--gradualTest: linear-gradient(45deg, #0acffe, #495aff);
+	--gradualBlueTest: linear-gradient(45deg, #6dd5ed, #2193b0);
+	--gradualPinkTest: linear-gradient(45deg, #ffdde1,#ee9ca7);
+	--gradualTest1: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+	--gradualTest2: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+	--gradualTest3: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%);
+	--gradualBlueThreeTest: linear-gradient(45deg, #91EAE4, #86A8E7, #7F7FD5);
+	--gradualTest: linear-gradient(45deg, #fbc2eb 0%, #a6c1ee 100%);
 	/* 阴影透明色 */
 	--ShadowSize: 6rpx 6rpx 8rpx;
 	--redShadow: rgba(204, 69, 59, 0.2);
@@ -96,6 +102,10 @@ image {
 
 .radius-l {
 	border-radius: 18rpx;
+}
+
+.radius-xl {
+	border-radius: 20rpx;
 }
 
 /* ==================
@@ -3685,6 +3695,16 @@ scroll-view.cu-steps .cu-item {
 
 .bg-gradual-blue {
 	background-image: var(--gradualBlue);
+	color: var(--white);
+}
+
+.bg-gradual-blue-test {
+	background-image: var(--gradualBlueTest);
+	color: var(--white);
+}
+
+.bg-gradual-pink-test {
+	background-image: var(--gradualPinkTest);
 	color: var(--white);
 }
 

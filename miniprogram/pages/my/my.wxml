@@ -4,12 +4,12 @@
         <view class="text-xl text-gray">{{userInfo.nickName}}
         </view>
     </view>
-    
+
     <view class="my">
 
         <view class="toool-list">
-            <view class="allBooking list radius margin-bottom-xs shadow-lg bg-grey light" hover-class="item-hover" hover-stay-time="100" data-url='bookingLists'
-                bindtap="gopage">
+            <view class="allBooking list radius margin-bottom-xs shadow-lg bg-grey light" hover-class="item-hover"
+                hover-stay-time="100" data-url='bookingLists' bindtap="gopage">
                 <view class="text">
                     我的记账
                 </view>
@@ -17,8 +17,8 @@
                     <view class="cuIcon-right"></view>
                 </view>
             </view>
-            <view class="allBooking list radius margin-bottom-xs shadow-lg bg-grey light" hover-class="item-hover" hover-stay-time="100" data-url='COVID'
-                bindtap="gopage">
+            <view class="allBooking list radius margin-bottom-xs shadow-lg bg-grey light" hover-class="item-hover"
+                hover-stay-time="100" data-url='COVID' bindtap="gopage">
                 <view class="text">
                     疫情监控
                 </view>
@@ -26,8 +26,8 @@
                     <view class="cuIcon-right"></view>
                 </view>
             </view>
-            <view class="About list radius margin-bottom-xs shadow-lg bg-grey light" hover-class="item-hover" hover-stay-time="100" data-url='about'
-                bindtap="gopageabout">
+            <view class="About list radius margin-bottom-xs shadow-lg bg-grey light" hover-class="item-hover"
+                hover-stay-time="100" data-url='about' bindtap="gopageabout">
                 <view class="text">
                     关于
                 </view>

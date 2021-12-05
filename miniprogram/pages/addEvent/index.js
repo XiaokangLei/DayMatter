@@ -15,7 +15,7 @@ Page({
    */
   data: {
     openId: "",
-    bg_color: 'red',
+    bg_color: 'gradual-pink-test',
     title: '没有标题呀',
     date: '',
     emoji: app.globalData.emoji,
@@ -52,6 +52,14 @@ Page({
       {
         name: 'pink',
         value: 'pink'
+      },
+      {
+        name: 'blue',
+        value: 'gradual-blue-test'
+      },
+      {
+        name: 'pink',
+        value: 'gradual-pink-test'
       },
     ],
 
